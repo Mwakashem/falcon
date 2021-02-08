@@ -375,14 +375,14 @@
                               <div class="avatar-name rounded-circle"><span>eq</span></div>
                             </div> --}}
                             <div class="flex-1">
-                              <h5 class="mb-0 fs--1">{{$loans->bankName }}</h5>
+                              <h5 class="mb-0 fs--1" id="f_loan_amt">{{$loans->loanAmount}}</h5>
                             </div>
                           </div>
                         </a></td>
-                      <td class="email align-middle py-2"><a  id="f_loan_amt">{{$loans->loanAmount}}</a></td>
+                      {{-- <td class="email align-middle py-2"><a  id="f_loan_amt">{{$loans->loanAmount}}</a></td> --}}
                       <td class="phone align-middle white-space-nowrap py-2" id="interest_rate">{{$loans->interestRate}}</a></td>
                       <td class="address align-middle white-space-nowrap pl-5 py-2" id="nbr_installments">{{$loans->numberOfInstallments}}</td>
-                      <td class="align-middle white-space-nowrap py-2 text-right" id="start_date">{{$loans->startDate}}
+                      <td class="address align-middle white-space-nowrap pl-5 py-2" id="start_date">{{$loans->startDate}}
                       </td>
                       <div id="Result"></div>
                     </tr>
@@ -402,9 +402,12 @@
             const f_loan_amt = document.querySelector("#f_loan_amt");
             const interest_rate = document.querySelector("#interest_rate");
             const nbr_installments = document.querySelector("#nbr_installments");
+            const start_date = document.querySelector("#start_date");
+
             let var_fla = Number(f_loan_amt.textContent);
             let var_ir = Number(interest_rate.textContent);
             let var_nbr = Number(nbr_installments.textContent);
+            let var_startdate = new Date(start_date.textContent);
             console.log(var_nbr)
 
             var monthlyRate = var_ir/12*0.01;
@@ -420,7 +423,7 @@
     //     "Total paid: $" + (payment * var_nbr).toFixed(2) + "<br /><br />";
       var result = '<tbody class="list" id="table-customers-body"><tr class="btn-reveal-trigger"><td class="align-middle py-2" style="width: 28px;"><div class="form-check fs-0 mb-0 d-flex align-items-center"><input class="form-check-input" type="checkbox" id="customer-0" data-bulk-select-row="data-bulk-select-row"></div></td>'  
     //add header row for table to return string
-    result += '<table class="table table-sm table-striped fs--1 mb-0"><thead class="bg-200 text-900"><tr><th></th><th class="sort pr-1 align-middle white-space-nowrap" data-sort="name">Balance</th><th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">Interest</th><th class="sort pr-1 align-middle white-space-nowrap" data-sort="phone">Principal</th>';
+    result += '<table class="table table-sm table-striped fs--1 mb-0"><thead class="bg-200 text-900"><tr><th></th><th class="sort pr-1 align-middle white-space-nowrap" data-sort="name">Date</th><th class="sort pr-1 align-middle white-space-nowrap" data-sort="email"> Beginning Balance</th><th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">Interest</th><th class="sort pr-1 align-middle white-space-nowrap" data-sort="phone">Principal</th><th class="sort pr-1 align-middle white-space-nowrap" data-sort="phone">TotalPyment</th><th class="sort pr-1 align-middle white-space-nowrap" data-sort="phone">Scheduled Payment</th><th class="sort pr-1 align-middle white-space-nowrap" data-sort="phone">EndingBalance</th>';
     
     /**
      * Loop that calculates the monthly Loan amortization amounts then adds 
@@ -433,12 +436,17 @@
         
         //in-loop monthly principal amount holder
         var monthlyPrincipal = 0;
+        totalpayment = 0;
+        scheduled_payment = 0;
+        ending_balance = 0;
         
         //start a new table row on each loop iteration
         result += "<tr btn-reveal-trigger>";
         
         //display the month number in col 1 using the loop count variable
         result += "<td flex-1>" + (count + 1) + "</td>";
+    
+        result += "<td flex-1>" + var_startdate + "</td>";
         
         
         //code for displaying in loop balance
@@ -451,7 +459,12 @@
         //calc the in-loop monthly principal and display
         monthlyPrincipal = payment - interest;
         result += "<td> Ksh." + monthlyPrincipal.toFixed(2) + "</td>";
-        
+        totalpayment = monthlyPrincipal + interest;
+        result += "<td> Ksh." + totalpayment.toFixed(2) + "</td>";
+        scheduled_payment = monthlyPrincipal + interest;
+        result += "<td> Ksh." + scheduled_payment.toFixed(2) + "</td>";
+        ending_balance = monthlyPrincipal + interest;
+        result += "<td> Ksh." + scheduled_payment.toFixed(2) + "</td>";
         //end the table row on each iteration of the loop   
         result += "</tr>";
         
