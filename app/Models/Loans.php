@@ -14,4 +14,7 @@ class Loans extends Model
     ];
     protected $table = 'loans';
     protected $guarded = [];
+    public function Repayments(){
+        return $this->hasMany(Repayments::class);
+    }
 }

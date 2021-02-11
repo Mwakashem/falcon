@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Loans;
+
+use App\Models\Repayments;
 use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 
@@ -30,6 +32,14 @@ class LoansController extends Controller
     {
         return view('addloan');
     }
+    // public function create1($id)
+    // {
+       
+    //     return view('show', [
+    //         'loans' => Loans::findOrFail($id)
+            
+    //     ]);
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -61,10 +71,10 @@ class LoansController extends Controller
      */
     public function show($id)
     {
-        
-        return view('show', [
+        // $loans->load('Repayments');
+        // $loans = Loans::with('$id')->get();
+        return view('show1', [
             'loans' => Loans::findOrFail($id)
-            
         ]);
     }
 
@@ -76,7 +86,7 @@ class LoansController extends Controller
      */
     public function edit(Loans $loans)
     {
-        //
+        return view('editloan' ,compact($loans));
     }
 
     /**

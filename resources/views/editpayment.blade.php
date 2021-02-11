@@ -322,119 +322,37 @@
               <p class="fs--1 mb-0"><a href="#!"><span class="fas fa-exchange-alt mr-2" data-fa-transform="rotate-90"></span>A payout for <strong>$921.42 </strong>was deposited 13 days ago</a>. Your next deposit is expected on <strong>Tuesday, March 13.</strong></p>
             </div>
           </div>
-          <div class="card mb-3" id="customersTable" data-list="{&quot;valueNames&quot;:[&quot;name&quot;,&quot;email&quot;,&quot;phone&quot;,&quot;address&quot;,&quot;joined&quot;],&quot;page&quot;:10,&quot;pagination&quot;:true}">
-            <div class="card-header">
-              <div class="row flex-between-center">
-                <div class="col-4 col-sm-auto d-flex align-items-center pr-0">
-                  <h5 class="fs-0 mb-0 text-nowrap py-2 py-xl-0">Loans Management</h5>
-                </div>
-                <div class="col-8 col-sm-auto text-right pl-2">
-                  <div class="d-none" id="table-customers-actions">
-                    <div class="d-flex">
-                      
-                      <button class="btn btn-falcon-default btn-sm ml-2" type="button">Apply</button>
-                    </div>
-                  </div>
-                  <div id="table-customers-replace-element">
-                    <button class="btn btn-falcon-default btn-sm" type="button"><span class="d-none d-sm-inline-block ml-1"><a href="/loans/{$loan->id}/edit">Pay Installment</a></span></button>
-                    {{-- <button class="btn btn-falcon-default btn-sm mx-2" type="button"><svg class="svg-inline--fa fa-filter fa-w-16" data-fa-transform="shrink-3 down-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="filter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style="transform-origin: 0.5em 0.625em;"><g transform="translate(256 256)"><g transform="translate(0, 64)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z" transform="translate(-256 -256)"></path></g></g></svg><!-- <span class="fas fa-filter" data-fa-transform="shrink-3 down-2"></span> --><span class="d-none d-sm-inline-block ml-1">Filter</span></button> --}}
-                    {{-- <button class="btn btn-falcon-default btn-sm" type="button"><svg class="svg-inline--fa fa-external-link-alt fa-w-16" data-fa-transform="shrink-3 down-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="external-link-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style="transform-origin: 0.5em 0.625em;"><g transform="translate(256 256)"><g transform="translate(0, 64)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z" transform="translate(-256 -256)"></path></g></g></svg><!-- < class="fas fa-external-link-alt" data-fa-transform="shrink-3 down-2"></span> --><span class="d-none d-sm-inline-block ml-1">Export</span></button> --}}
-                  </div>
-                </div>
-              </div>
-            </div>
-              <div class="card-header">
-            <form method="POST" action="/loans/1/repayments" class="row row-cols-lg-4 g-3 align-items-center" >
+          <div class="card bg-light mb-3">
+            <form action="/repayments" method="post">
               @csrf
-              <?php 
+            <div class="card-body p-3">
+                <div class="col">
+                  <label class="form-label" for="bankName">Installment Number</label>
+                  <input class="form-control" value="{{$repayments->id}}" name="installmentNumber" id="bankName" type="text" placeholder="No.of Installments" required />
+                </div>
+              <div class="row">
+                <div class="col">
+                  <label class="form-label" for="amount">Payment Amount</label>
+                  <input class="form-control" value="{{$repayments->scheduledPayment}}" name="paymentAmount" id="amount" type="text" placeholder="Enter Loan Amount" required />
+                </div>
+              </div>
+                <div class="col">
+                  <label class="form-label" for="bankName">Cheque Number</label>
+                  <input class="form-control" name="chequeNumber" id="bankName" type="text" placeholder="Cheque No." required />
+                </div>
+                <div class="d-flex justify-content-between">
+                <div class="col-4">
+                  <label class="form-label" for="datepicker">Date Cheque Deposited</label>
+                  <input class="form-control datetimepicker" name="date_deposited" id="datepicker" type="text" placeholder="d/m/y" />
+                </div>
 
-                       $monthlyRate = ($loans->interestRate)/12*0.01;
-                       $payment =($loans->loanAmount) * ($monthlyRate/(1- pow(1+$monthlyRate, -($loans->numberOfInstallments))));
-                      //  var payment = var_fla* (monthlyRate/(1-Math.pow(1+monthlyRate, -var_nbr)));
-                      $loanAmount = ($loans->loanAmount);
-                      $start_date =($loans->startDate);
-                      $loans_id =($loans->id);
-                      ?>
+                <input type="submit" class=" mt-4 ml-20 btn btn-primary" value="submit"> 
+                </div>            
 
-                      @for ($i = 0; $i <($loans->numberOfInstallments); $i++)
-                      <?php $interest = 0;
-        
-                      //in-loop monthly principal amount holder
-                      $monthlyPrincipal = 0;
-                      $totalpayment = 0;
-                      $scheduled_payment = 0;
-                      $ending_balance = 0;
-                     
-                      ?>
-                      <?php $interest = $loanAmount * $monthlyRate;?>
-              
-              <div class="col-2">
-                <label class="sr-only" for="inlineFormInputName">LoanId</label>
-                <input class="form-control" value="@php
-                echo ($loans_id)
-            @endphp" name="loans_id[@php echo ($i)@endphp]" type="text" placeholder="" />
-              </div>
-              
-              <div class="col-2">
-                <label class="sr-only" for="inlineFormInputName">Date</label>
-                <input class="form-control" value="@php
-                echo ($start_date)
-            @endphp" name="start_date[@php echo ($i)@endphp]" type="text" placeholder="" />
-              </div>
-              
-              <div class="col-2">
-                <label class="sr-only" for="inlineFormInputName">Beginning Balance</label>
-                <input class="form-control" value="@php
-                echo ($loanAmount)
-            @endphp" name="beginningBalance[@php echo ($i)@endphp]" type="text" placeholder="" />
-              </div>
-              <?php $interest = $loanAmount * $monthlyRate;?>
-              <div class="col-1">
-                <label class="sr-only" for="inlineFormInputName">Interest</label>
-                <input class="form-control" value="@php
-                echo($interest)
-            @endphp" name="interest[@php echo ($i)@endphp]" type="text" placeholder="" />
-              </div>
-              <?php $monthlyPrincipal = $payment - $interest;?>
-              <div class="col-1">
-                <label class="sr-only" for="inlineFormInputName">Principal</label>
-                <input class="form-control" value="@php
-                echo ($monthlyPrincipal)
-            @endphp" name="principal[@php echo ($i)@endphp]" type="text" placeholder="" />
-              </div>
-
-              @php
-              $totalpayment = $monthlyPrincipal + $interest;
-              @endphp
-              <div class="col-2">
-                <label class="sr-only" for="inlineFormInputName">Scheduled Payment</label>
-                <input class="form-control" value="@php
-                echo ($totalpayment)
-            @endphp" name="scheduledPayment[@php echo ($i)@endphp]" type="text" placeholder="" />
-              </div>
-              @php
-                        $ending_balance = $loanAmount - $monthlyPrincipal; 
-                      @endphp
-              <div class="col-1">
-                <label class="sr-only" for="inlineFormInputName">Ending Balance</label>
-                <input class="form-control" value="@php
-                echo round($ending_balance, -2)
-            @endphp" name="endingBalance[@php echo ($i)@endphp]" type="text" placeholder="" />
-              </div>
-              @php
-                       $loanAmount = $loanAmount - $monthlyPrincipal;   
-                      //  $start_date = start_date('Y-m-d', strtotime($date. ' + 30 days'));      
-                       $start_date = strtotime($start_date);
-                       $start_date = date("Y-m-d", strtotime("+1 month", $start_date))."\n";
-                    @endphp
-                    @endfor
-
-                <input type="submit" class="btn btn-primary">
-              
+            </div>
             </form>
-              </div>
-
           </div>
+
 
           <footer>
             <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
@@ -581,7 +499,7 @@
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="modal-auth-register-checkbox" />
-                    <label class="form-label" for="modal-auth-register-checkbox">I accept the <a href="#!">var_ld </a>and <a href="#!">privacy policy</a></label>
+                    <label class="form-label" for="modal-auth-register-checkbox">I accept the <a href="#!">terms </a>and <a href="#!">privacy policy</a></label>
                   </div>
                   <div class="mb-3">
                     <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Register</button>
@@ -610,7 +528,7 @@
 
     <!-- ===============================================-->
     <!--    JavaScripts-->
-    {{-- <!-- ===============================================-->
+    <!-- ===============================================-->
     <script src="../../../vendors/popper/popper.min.js"></script>
     <script src="../../../vendors/bootstrap/bootstrap.min.js"></script>
     <script src="../../../vendors/anchorjs/anchor.min.js"></script>
@@ -628,8 +546,8 @@
   
     <script src="../../../vendors/choices/choices.min.js"></script>
     
-    <script src="../../../vendors/dropzone/dropzone.min.js"></script> --}}
-    {{-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:100,200,300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet"> --}}
+    <script src="../../../vendors/dropzone/dropzone.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:100,200,300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
   </body>
 
 </html>
