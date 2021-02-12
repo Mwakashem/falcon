@@ -34,7 +34,6 @@ Route::post('/transactions/create', [PaymentTransactionsController::class,'store
 Route::post('/loans', [LoansController::class,'store']);
 Route::get('/loans/{id}', [LoansController::class,'show']);
 Route::get('/loans/{id}/edit', [LoansController::class,'edit']);
-// Route::get('/blog/{blog:title}', 'BlogController@show');
 Route::get('/banks/add', [BankAccountController::class,'create']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
