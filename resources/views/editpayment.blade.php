@@ -323,32 +323,21 @@
             </div>
           </div>
           <div class="card bg-light mb-3">
-            <form action="/repayments" method="post">
+            <form action="/repayments/update/{{$repayments->id}}" method="post">
               @csrf
             <div class="card-body p-3">
-                <div class="col">
+                {{-- <div class="col">
                   <label class="form-label" for="bankName">Installment Number</label>
                   <input class="form-control" value="{{$repayments->id}}" name="installmentNumber" id="bankName" type="text" placeholder="No.of Installments" required />
-                </div>
-              <div class="row">
-                <div class="col">
-                  <label class="form-label" for="amount">Payment Amount</label>
-                  <input class="form-control" value="{{$repayments->scheduledPayment}}" name="paymentAmount" id="amount" type="text" placeholder="Enter Loan Amount" required />
-                </div>
+                </div>   --}}
+                <div class="col-12">
+                <label class="sr-only" for="inlineFormSelectPref">Preference</label>
+                <select class="form-select" id="inlineFormSelectPref">
+                  <option value="{{$repayments->status}}" selected="">{{$repayments->status}}</option>
+                  <option value="Paid">Paid</option>
+                </select>
               </div>
-                <div class="col">
-                  <label class="form-label" for="bankName">Cheque Number</label>
-                  <input class="form-control" name="chequeNumber" id="bankName" type="text" placeholder="Cheque No." required />
-                </div>
-                <div class="d-flex justify-content-between">
-                <div class="col-4">
-                  <label class="form-label" for="datepicker">Date Cheque Deposited</label>
-                  <input class="form-control datetimepicker" name="date_deposited" id="datepicker" type="text" placeholder="d/m/y" />
-                </div>
-
-                <input type="submit" class=" mt-4 ml-20 btn btn-primary" value="submit"> 
-                </div>            
-
+              <input type="submit" class=" mt-4 ml-20 btn btn-primary" value="Complete Transaction"> 
             </div>
             </form>
           </div>

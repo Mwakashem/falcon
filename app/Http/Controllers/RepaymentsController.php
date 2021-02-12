@@ -67,7 +67,7 @@ class RepaymentsController extends Controller
     }
 
         // Repayments::create($data);
-        // return redirect ('/');
+        return redirect ('/');
     }
 
     /**
@@ -103,9 +103,18 @@ class RepaymentsController extends Controller
      * @param  \App\Models\Repayments  $repayments
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Repayments $repayments)
+    public function update(Request $request, $id)
     {
-        //
+        // return view('show1', [
+        // ]);
+        $repayments = Repayments::where('id', '=', $id)->first();
+        // dd($repayments);
+        $repayments->status = 'paid';
+        // $id= $id;
+        // dd($repayments);
+        $repayments->update($request->all());
+        // dd($repayments);
+        return redirect('/transactions/create/'.$id);
     }
 
     /**

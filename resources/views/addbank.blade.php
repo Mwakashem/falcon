@@ -321,164 +321,47 @@
             <div class="card-body p-3">
               <p class="fs--1 mb-0"><a href="#!"><span class="fas fa-exchange-alt mr-2" data-fa-transform="rotate-90"></span>A payout for <strong>$921.42 </strong>was deposited 13 days ago</a>. Your next deposit is expected on <strong>Tuesday, March 13.</strong></p>
             </div>
-          </div><div class="card mb-3" id="customersTable" data-list="{&quot;valueNames&quot;:[&quot;name&quot;,&quot;email&quot;,&quot;phone&quot;,&quot;address&quot;,&quot;joined&quot;],&quot;page&quot;:10,&quot;pagination&quot;:true}">
-            <div class="card-header">
-              <div class="row flex-between-center">
-                <div class="col-4 col-sm-auto d-flex align-items-center pr-0">
-                  <h5 class="fs-0 mb-0 text-nowrap py-2 py-xl-0">Loans Management</h5>
-                </div>
-                <div class="col-8 col-sm-auto text-right pl-2">
-                  <div class="d-none" id="table-customers-actions">
-                    <div class="d-flex">
-                      
-                      <button class="btn btn-falcon-default btn-sm ml-2" type="button">Apply</button>
-                    </div>
-                  </div>
-                  <div id="table-customers-replace-element">
-                    <button class="btn btn-falcon-default btn-sm" type="button"><svg class="svg-inline--fa fa-plus fa-w-14" data-fa-transform="shrink-3 down-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="" style="transform-origin: 0.4375em 0.625em;"><g transform="translate(224 256)"><g transform="translate(0, 64)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" transform="translate(-224 -256)"></path></g></g></svg><!-- <span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span> --><span class="d-none d-sm-inline-block ml-1"><a href="/loans/{{$loans->id}}/repayments/create">Create Armotisation Table</a></span></button>
-                    {{-- <button class="btn btn-falcon-default btn-sm mx-2" type="button"><svg class="svg-inline--fa fa-filter fa-w-16" data-fa-transform="shrink-3 down-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="filter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style="transform-origin: 0.5em 0.625em;"><g transform="translate(256 256)"><g transform="translate(0, 64)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z" transform="translate(-256 -256)"></path></g></g></svg><!-- <span class="fas fa-filter" data-fa-transform="shrink-3 down-2"></span> --><span class="d-none d-sm-inline-block ml-1">Filter</span></button>
-                    <button class="btn btn-falcon-default btn-sm" type="button"><svg class="svg-inline--fa fa-external-link-alt fa-w-16" data-fa-transform="shrink-3 down-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="external-link-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style="transform-origin: 0.5em 0.625em;"><g transform="translate(256 256)"><g transform="translate(0, 64)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z" transform="translate(-256 -256)"></path></g></g></svg><!-- <span class="fas fa-external-link-alt" data-fa-transform="shrink-3 down-2"></span> --><span class="d-none d-sm-inline-block ml-1">Export</span></button> --}}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-body p-0">
-              <div class="table-responsive" id="table-responsive">
-                <table class="table table-sm table-striped fs--1 mb-0">
-                  <thead class="bg-200 text-900">
-                    <tr>
-                      <th>
-                        <div class="form-check fs-0 mb-0 d-flex align-items-center">
-                          <input class="form-check-input" id="checkbox-bulk-customers-select" type="checkbox" data-bulk-select="{&quot;body&quot;:&quot;table-customers-body&quot;,&quot;actions&quot;:&quot;table-customers-actions&quot;,&quot;replacedElement&quot;:&quot;table-customers-replace-element&quot;}">
-                        </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-                      </th>
-                      {{-- <th class="sort pr-1 align-middle white-space-nowrap" data-sort="name">Bank Name</th> --}}
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">Loan Amount</th>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="phone">Interest Rate</th>
-                      {{-- <th class="sort pr-1 align-middle white-space-nowrap pl-5" data-sort="address" style="min-width: 200px;">Loans Duration</th> --}}
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="joined">No.Installments</th>
-                      {{-- <th class="sort pr-1 align-middle white-space-nowrap" data-sort="joined">First Installment</th> --}}
-                      {{-- <th class="sort pr-1 align-middle white-space-nowrap" data-sort="joined">Balance</th> --}}
-                      <th class="align-middle no-sort">Start date</th>
-                    </tr>
-                  </thead>
-                  <tbody class="list" id="table-customers-body">
-                      <tr class="btn-reveal-trigger">
-                      <td class="align-middle py-2" style="width: 28px;">
-                        <div class="form-check fs-0 mb-0 d-flex align-items-center">
-                          <input class="form-check-input" type="checkbox" id="customer-0" data-bulk-select-row="data-bulk-select-row">
-                        </div>
-                      </td>
-                      <td class="name align-middle white-space-nowrap py-2"><a href="e-commerce/customer-details.html">
-                          <div class="d-flex d-flex align-items-center">
-                            {{-- <div class="avatar avatar-xl mr-2">
-                              <div class="avatar-name rounded-circle"><span>eq</span></div>
-                            </div> --}}
-                            <div class="flex-1">
-                              <h5 class="mb-0 fs--1" id="f_loan_amt">{{$loans->loanAmount}}</h5>
-                            </div>
-                          </div>
-                        </a></td>
-                      {{-- <td class="email align-middle py-2"><a  id="f_loan_amt">{{$loans->loanAmount}}</a></td> --}}
-                      <td class="phone align-middle white-space-nowrap py-2" id="interest_rate">{{$loans->interestRate}}</a></td>
-                      <td class="address align-middle white-space-nowrap pl-5 py-2" id="nbr_installments">{{$loans->numberOfInstallments}}</td>
-                      <td class="address align-middle white-space-nowrap pl-5 py-2" id="start_date">{{$loans->startDate}}
-                      </td>
-                      <div id="Result"></div>
-                    </tr>
-                </tbody>
-                </table>
-              </div>
-            </div>
-            {{-- <div class="card-footer d-flex align-items-center justify-content-center">
-              <button class="btn btn-sm btn-falcon-default mr-1 disabled" type="button" title="Previous" data-list-pagination="prev" disabled=""><svg class="svg-inline--fa fa-chevron-left fa-w-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg><!-- <span class="fas fa-chevron-left"></span> --></button>
-              <ul class="pagination mb-0"><li class="active"><a class="page" href="javascript:function Z(){Z=&quot;&quot;}Z()">1</a></li><li><a class="page" href="javascript:function Z(){Z=&quot;&quot;}Z()">2</a></li><li><a class="page" href="javascript:function Z(){Z=&quot;&quot;}Z()">3</a></li></ul>
-              <button class="btn btn-sm btn-falcon-default ml-1" type="button" title="Next" data-list-pagination="next"><svg class="svg-inline--fa fa-chevron-right fa-w-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg><!-- <span class="fas fa-chevron-right"></span> --></button>
-            </div> --}}
           </div>
-          <div class="card mb-3" id="customersTable" data-list="{&quot;valueNames&quot;:[&quot;name&quot;,&quot;email&quot;,&quot;phone&quot;,&quot;address&quot;,&quot;joined&quot;],&quot;page&quot;:10,&quot;pagination&quot;:true}">
-            <div class="card-header">
-              <div class="row flex-between-center">
-                <div class="col-4 col-sm-auto d-flex align-items-center pr-0">
-                  <h5 class="fs-0 mb-0 text-nowrap py-2 py-xl-0">Customers</h5>
+          <div class="card bg-light mb-3">
+            <form action="/loans" method="post">
+              @csrf
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col">
+                  <label class="form-label" for="bankName">Bank Name</label>
+                  <input class="form-control" name="bankName" id="bankName" type="text" placeholder="Enter Bank Name" required />
                 </div>
-                <div class="col-8 col-sm-auto text-right pl-2">
-                  <div class="d-none" id="table-customers-actions">
-                    <div class="d-flex">
-                      <select class="form-select form-select-sm" aria-label="Bulk actions">
-                        <option selected="">Bulk actions</option>
-                        <option value="Refund">Refund</option>
-                        <option value="Delete">Delete</option>
-                        <option value="Archive">Archive</option>
-                      </select>
-                      <button class="btn btn-falcon-default btn-sm ml-2" type="button">Apply</button>
-                    </div>
-                  </div>
-                  <div id="table-customers-replace-element">
-                    <button class="btn btn-falcon-default btn-sm" type="button"><svg class="svg-inline--fa fa-plus fa-w-14" data-fa-transform="shrink-3 down-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="" style="transform-origin: 0.4375em 0.625em;"><g transform="translate(224 256)"><g transform="translate(0, 64)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" transform="translate(-224 -256)"></path></g></g></svg><!-- <span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span> --><span class="d-none d-sm-inline-block ml-1">New</span></button>
-                    <button class="btn btn-falcon-default btn-sm mx-2" type="button"><svg class="svg-inline--fa fa-filter fa-w-16" data-fa-transform="shrink-3 down-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="filter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style="transform-origin: 0.5em 0.625em;"><g transform="translate(256 256)"><g transform="translate(0, 64)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z" transform="translate(-256 -256)"></path></g></g></svg><!-- <span class="fas fa-filter" data-fa-transform="shrink-3 down-2"></span> --><span class="d-none d-sm-inline-block ml-1">Filter</span></button>
-                    <button class="btn btn-falcon-default btn-sm" type="button"><svg class="svg-inline--fa fa-external-link-alt fa-w-16" data-fa-transform="shrink-3 down-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="external-link-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style="transform-origin: 0.5em 0.625em;"><g transform="translate(256 256)"><g transform="translate(0, 64)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z" transform="translate(-256 -256)"></path></g></g></svg><!-- <span class="fas fa-external-link-alt" data-fa-transform="shrink-3 down-2"></span> --><span class="d-none d-sm-inline-block ml-1">Export</span></button>
-                  </div>
+                <div class="col">
+                  <label class="form-label" for="amount">Loan Amount</label>
+                  <input class="form-control" name="loanAmount" id="amount" type="text" placeholder="Enter Loan Amount" required />
                 </div>
               </div>
+                <div class="col">
+                  <label class="form-label" for="bankName">Interest Rate</label>
+                  <input class="form-control" name="interestRate" id="bankName" type="text" placeholder="Interest rate" required />
+                </div>
+                <div class="col">
+                  <label class="form-label" for="bankName">Loan Duration</label>
+                  <input class="form-control" name="loanDuration" id="bankName" type="text" placeholder="Enter Bank Name" required />
+                </div>
+                <div class="col">
+                  <label class="form-label" for="bankName">No. of Installments</label>
+                  <input class="form-control" name="numberOfInstallments" id="bankName" type="text" placeholder="No.of Installments" required />
+                </div>
+                <div class="d-flex justify-content-between">
+                <div class="col-4">
+                  <label class="form-label" for="datepicker">Start Date</label>
+                  <input class="form-control datetimepicker" name="startDate" id="datepicker" type="text" placeholder="d/m/y" />
+                </div>
+
+                <input type="submit" class=" mt-4 ml-20 btn btn-primary" value="submit"> 
+                </div>            
+
             </div>
-            <div class="card-body p-0">
-              <div class="table-responsive">
-                <table class="table table-sm table-striped fs--1 mb-0">
-                  <thead class="bg-200 text-900">
-                    <tr>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="name">#LoanId</th>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">PaymentDate</th>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">Beginning Balance</th>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="phone">Interest</th>
-                      <th class="sort pr-1 align-middle white-space-nowrap pl-5" data-sort="address" style="min-width: 200px;">Scheduled Payment </th>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="joined">Ending Balance</th>
-                      <th class="align-middle no-sort"> </th>
-                    </tr>
-                  </thead>
-                  <tbody class="list" id="table-customers-body">
-                    @foreach ( $loans->repayments as $repayments)
-                    <tr class="btn-reveal-trigger">
-                      <td class="name align-middle white-space-nowrap py-2"><a href="../e-commerce/customer-details.html">
-                          <div class="d-flex d-flex align-items-center">
-                            <div class="avatar avatar-xl mr-2">
-                              <div class="avatar-name rounded-circle"><span>#</span></div>
-                            </div>
-                            <div class="flex-1">
-                              <h5 class="mb-0 fs--1">{{$repayments->id}}</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </td>
-                        <td class="email align-middle py-2"><a href="#">{{date('d-m-Y', strtotime($repayments->start_date))}}</a></td>
-                        <td class="email align-middle py-2"><a href="#">{{$repayments->beginningBalance}}</a></td>
-                      <td class="phone align-middle white-space-nowrap py-2"><a href="">{{$repayments->interest}}</a></td>
-                      <td class="address align-middle white-space-nowrap pl-5 py-2">{{$repayments->scheduledPayment}} </td>
-                      <td class="joined align-middle py-2">{{$repayments->endingBalance}}</td>
-                      <td class="align-middle white-space-nowrap py-2 text-right">
-                        <div class="dropdown font-sans-serif">{{ ucfirst(trans($repayments->status)) }}
-                          <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal" type="button" id="customer-dropdown-0" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--1"></span> --></button>
-                          <div class="dropdown-menu dropdown-menu-right border py-0" aria-labelledby="customer-dropdown-0">
-                            <div class="bg-white py-2"><a class="dropdown-item" href="/repayments/update/{{$repayments->id}}/edit">  Pay
-                           </a>
-                          </div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    @endforeach
-                    
-                    
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="card-footer d-flex align-items-center justify-content-center">
-              <button class="btn btn-sm btn-falcon-default mr-1 disabled" type="button" title="Previous" data-list-pagination="prev" disabled=""><svg class="svg-inline--fa fa-chevron-left fa-w-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg><!-- <span class="fas fa-chevron-left"></span> --></button>
-              <ul class="pagination mb-0"><li class="active"><a class="page" href="javascript:function Z(){Z=&quot;&quot;}Z()">1</a></li><li><a class="page" href="javascript:function Z(){Z=&quot;&quot;}Z()">2</a></li><li><a class="page" href="javascript:function Z(){Z=&quot;&quot;}Z()">3</a></li></ul>
-              <button class="btn btn-sm btn-falcon-default ml-1" type="button" title="Next" data-list-pagination="next"><svg class="svg-inline--fa fa-chevron-right fa-w-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg><!-- <span class="fas fa-chevron-right"></span> --></button>
-            </div>
+            </form>
           </div>
+
+
           <footer>
             <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
               <div class="col-12 col-sm-auto text-center">
@@ -624,7 +507,7 @@
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="modal-auth-register-checkbox" />
-                    <label class="form-label" for="modal-auth-register-checkbox">I accept the <a href="#!">var_ld </a>and <a href="#!">privacy policy</a></label>
+                    <label class="form-label" for="modal-auth-register-checkbox">I accept the <a href="#!">terms </a>and <a href="#!">privacy policy</a></label>
                   </div>
                   <div class="mb-3">
                     <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Register</button>

@@ -18,7 +18,7 @@ class CreatePaymentTransactionsTable extends Migration
             $table->string('installmentNumber');
             $table->string('paymentAmount');
             $table->string('chequeNumber');            
-            $table->double('date_deposited');
+            $table->string('date_deposited');
             $table->timestamps();
         });
     }
