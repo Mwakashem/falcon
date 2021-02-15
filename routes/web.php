@@ -23,34 +23,34 @@ use Laravel\Jetstream\Rules\Role;
 |
 */
 
-Route::get('/',[LoansController::class,'index']);
+Route::get('/',[LoansController::class,'index'])->middleware('auth')->middleware('auth');
 
-Route::get('/loans/add', [LoansController::class,'create']);
-Route::any('/loans/{id}/repayments/create', [RepaymentsController::class,'create']);
-Route::post('/loans/{id}/repayments', [RepaymentsController::class,'store']);
-Route::get('/repayments/{paymentid}', [RepaymentsController::class,'edit']);
-Route::get('/repayments/update/{paymentTransaction}/edit', [RepaymentsController::class,'edit']);
-Route::post('/repayments/update/{paymentTransaction}', [RepaymentsController::class,'update']);
-Route::get('/transactions/create/{r_id}', [PaymentTransactionsController::class,'create']);
-Route::post('/transactions/create', [PaymentTransactionsController::class,'store']);
+Route::get('/loans/add', [LoansController::class,'create'])->middleware('auth');
+Route::any('/loans/{id}/repayments/create', [RepaymentsController::class,'create'])->middleware('auth');
+Route::post('/loans/{id}/repayments', [RepaymentsController::class,'store'])->middleware('auth');
+Route::get('/repayments/{paymentid}', [RepaymentsController::class,'edit'])->middleware('auth');
+Route::get('/repayments/update/{paymentTransaction}/edit', [RepaymentsController::class,'edit'])->middleware('auth');
+Route::post('/repayments/update/{paymentTransaction}', [RepaymentsController::class,'update'])->middleware('auth');
+Route::get('/transactions/create/{r_id}', [PaymentTransactionsController::class,'create'])->middleware('auth');
+Route::post('/transactions/create', [PaymentTransactionsController::class,'store'])->middleware('auth');
 // Route::post('/loan', [LoansController::class,'store1']);
 
-Route::post('/loans', [LoansController::class,'store']);
-Route::get('/loans/{id}', [LoansController::class,'show']);
-Route::get('/loans/{id}/edit', [LoansController::class,'edit']);
-Route::get('/banks', [BankAccountController::class,'index']);
-Route::get('/banks/add', [BankAccountController::class,'create']);
-Route::post('/banks', [BankAccountController::class,'store']);
+Route::post('/loans', [LoansController::class,'store'])->middleware('auth');
+Route::get('/loans/{id}', [LoansController::class,'show'])->middleware('auth');
+Route::get('/loans/{id}/edit', [LoansController::class,'edit'])->middleware('auth');
+Route::get('/banks', [BankAccountController::class,'index'])->middleware('auth');
+Route::get('/banks/add', [BankAccountController::class,'create'])->middleware('auth');
+Route::post('/banks', [BankAccountController::class,'store'])->middleware('auth');
 
 
-Route::get('/customers', [CustomersController::class,'index']);
-Route::get('/customers/add', [CustomersController::class,'create']);
-Route::post('/customers', [CustomersController::class,'store']);
+Route::get('/customers', [CustomersController::class,'index'])->middleware('auth');
+Route::get('/customers/add', [CustomersController::class,'create'])->middleware('auth');
+Route::post('/customers', [CustomersController::class,'store'])->middleware('auth');
 
 
-Route::get('/suppliers', [SuppliersController::class,'index']);
-Route::get('/suppliers/add', [SuppliersController::class,'create']);
-Route::post('/suppliers', [SuppliersController::class,'store']);
+Route::get('/suppliers', [SuppliersController::class,'index'])->middleware('auth');
+Route::get('/suppliers/add', [SuppliersController::class,'create'])->middleware('auth');
+Route::post('/suppliers', [SuppliersController::class,'store'])->middleware('auth');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Loans;
+use App\Models\BankAccount;
 
 use App\Models\Repayments;
 use Facade\FlareClient\View;
@@ -30,7 +31,8 @@ class LoansController extends Controller
      */
     public function create()
     {
-        return view('addloan');
+        $banks = BankAccount::latest()->get();
+        return view('addloan', compact('banks'));
     }
     // public function create1($id)
     // {
