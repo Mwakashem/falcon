@@ -24,19 +24,17 @@
     <link rel="manifest" href="/img/favicons/manifest.json">
     <meta name="msapplication-TileImage" content="/img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#ffffff">
-    <script src="../js/config.js"></script>
+    <script src="/js/config.js"></script>
 
 
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
-    <link href="../vendors/leaflet/leaflet.css" rel="stylesheet">
-    <link href="../vendors/leaflet.markercluster/MarkerCluster.css" rel="stylesheet">
-    <link href="../vendors/leaflet.markercluster/MarkerCluster.Default.css" rel="stylesheet">
-    <link href="../css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
-    <link href="../vendors/flatpickr/flatpickr.min.css" rel="stylesheet" />
-
-    <link href="../css/theme.min.css" rel="stylesheet" id="style-default">
+    <link href="vendors/leaflet/leaflet.css" rel="stylesheet">
+    <link href="vendors/leaflet.markercluster/MarkerCluster.css" rel="stylesheet">
+    <link href="vendors/leaflet.markercluster/MarkerCluster.Default.css" rel="stylesheet">
+    <link href="/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
+    <link href="/css/theme.min.css" rel="stylesheet" id="style-default">
     <script>
       var isRTL = JSON.parse(localStorage.getItem('isRTL'));
       if (isRTL) {
@@ -79,7 +77,7 @@
               <button class="btn navbar-toggler-humburger-icon navbar-vertical-toggle" data-toggle="tooltip" data-placement="left" title="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
 
             </div><a class="navbar-brand" href="index.html">
-              <div class="d-flex align-items-center py-3"><img class="mr-2" src="/img/illustrations/falcon.png" alt="" width="40" /><span class="font-sans-serif">falcon</span>
+              <div class="d-flex align-items-center py-3 "><img class="mr-2 rounded-circle" src="/img/qubes.png" alt="" width="40" /><span class="font-sans-serif ">Qubes ERP</span>
               </div>
             </a>
           </div>
@@ -114,11 +112,11 @@
             <ul class="navbar-nav align-items-center d-none d-lg-block">
               <li class="nav-item">
                 <div class="search-box" data-list='{"valueNames":["title"]}'>
-                  <form class="position-relative" data-toggle="search" data-display="static">
+                  {{-- <form class="position-relative" data-toggle="search" data-display="static">
                     <input class="form-control search-input fuzzy-search" type="search" placeholder="Search..." aria-label="Search" />
                     <span class="fas fa-search search-box-icon"></span>
 
-                  </form>
+                  </form> --}}
                   <button class="btn-close position-absolute right-0 top-50 translate-middle shadow-none p-1 mr-1 fs--2" type="button" data-dismiss="search"></button>
                   <div class="dropdown-menu border font-base left-0 mt-2 py-0 overflow-hidden w-100">
                     <div class="scrollbar list py-3" style="max-height: 24rem;">
@@ -322,32 +320,109 @@
               <p class="fs--1 mb-0"><a href="#!"><span class="fas fa-exchange-alt mr-2" data-fa-transform="rotate-90"></span>A payout for <strong>$921.42 </strong>was deposited 13 days ago</a>. Your next deposit is expected on <strong>Tuesday, March 13.</strong></p>
             </div>
           </div>
-          <div class="card bg-light mb-3">
-            <form action="/banks" method="post">
-              @csrf
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col">
-                  <label class="form-label" for="bankName">Bank Name</label>
-                  <input class="form-control" name="bankName" id="bankName" type="text" placeholder="Enter Bank Name" required />
-                </div>
-                <div class="col">
-                  <label class="form-label" for="amount">Account Number</label>
-                  <input class="form-control" name="accountNumber" id="amount" type="text" placeholder="Enter Account Number" required />
+          <div class="row g-3">
+            <div class="col-sm-6 col-md-4">
+              <div class="card overflow-hidden" style="min-width: 12rem">
+                <div class="bg-holder bg-card" style="background-image:url(/img/illustrations/corner-1.png);">
                 </div>
               </div>
-                <div class="col">
-                  <label class="form-label" for="bankName">Account Type</label>
-                  <input class="form-control" name="accountType" id="bankName" type="text" placeholder="Interest rate" required />
-                </div>
-                <input type="submit" class=" mt-4 ml-20 btn btn-primary" value="submit"> 
-                </div>            
-
             </div>
-            </form>
+            <div class="col-sm-6 col-md-4">
+              <div class="card overflow-hidden" style="min-width: 12rem">
+                <div class="bg-holder bg-card" style="background-image:url(/img/illustrations/corner-2.png);">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-3 overflow-hidden" style="min-width: 12rem">
+                <div class="bg-holder bg-card" style="background-image:url(/img/illustrations/corner-3.png);">
+                </div>
+                <!--/.bg-holder-->
+              </div>
+            </div>
           </div>
+          <div class="card mb-3" id="recentPurchaseTable" data-list='{"valueNames":["name","email","product","payment","amount"],"page":8,"pagination":true}'>
+            <div class="card-header">
+              <div class="row flex-between-center">
+                <div class="col-6 col-sm-auto d-flex align-items-center pr-0">
+                  <h5 class="fs-0 mb-0 text-nowrap py-2 py-xl-0">Recent Purchases</h5>
+                </div>
+                <div class="col-6 col-sm-auto ml-auto text-right pl-0">
+                  <div class="d-none" id="table-purchases-actions">
+                    <div class="d-flex">
+                      <select class="form-select form-select-sm" aria-label="Bulk actions">
+                        <option selected="">Bulk actions</option>
+                        <option value="Refund">Refund</option>
+                        <option value="Delete">Delete</option>
+                        <option value="Archive">Archive</option>
+                      </select>
+                      <button class="btn btn-falcon-default btn-sm ml-2" type="button">Apply</button>
+                    </div>
+                  </div>
+                  <div id="table-purchases-replace-element">
+                    <button class="btn btn-falcon-default btn-sm" type="button"><span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span><span class="d-none d-sm-inline-block ml-1"><a href="/banks/add"> New Loan</a></span></button>
+                    {{-- <button class="btn btn-falcon-default btn-sm mx-2" type="button"><span class="fas fa-filter" data-fa-transform="shrink-3 down-2"></span><span class="d-none d-sm-inline-block ml-1">Filter</span></button> --}}
+                    {{-- <button class="btn btn-falcon-default btn-sm" type="button"><span class="fas fa-external-link-alt" data-fa-transform="shrink-3 down-2"></span><span class="d-none d-sm-inline-block ml-1">Export</span></button> --}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body px-0 py-0">
+              <div class="table-responsive scrollbar">
+                <table class="table table-sm fs--1 mb-0">
+                  <thead class="bg-200 text-900">
+                    <tr>
+                      <th>
+                        <div class="form-check mb-0 d-flex align-items-center">
+                          <input class="form-check-input" id="checkbox-bulk-purchases-select" type="checkbox" data-bulk-select='{"body":"table-purchase-body","actions":"table-purchases-actions","replacedElement":"table-purchases-replace-element"}' />
+                        </div>
+                      </th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="name"> Name</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">#Email</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Phone Number</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Account Number</th>
+                      <th class="no-sort pr-1 align-middle data-table-row-action"></th>
+                    </tr>
+                  </thead>
+                  @foreach($customers as $customers)
+                  <tbody class="list" id="table-purchase-body">
+                    <tr class="btn-reveal-trigger">
+                      <td class="align-middle" style="width: 28px;">
+                        <div class="form-check mb-0 d-flex align-items-center">
+                          <input class="form-check-input" type="checkbox" id="recent-purchase-0" data-bulk-select-row="data-bulk-select-row" />
+                        </div>
+                      </td>
+                      <th class="align-middle white-space-nowrap name"><a href="pages/customer-details.html">{{$customers->name}}</a></th>
+                      <td class="align-middle white-space-nowrap email">{{$customers->email}}</td>
+                      <td class="align-middle white-space-nowrap product">{{$customers->phoneNumber}}</td>
+                      <td class="align-middle white-space-nowrap product">{{$customers->accountNumber}}</td>
 
-
+                      <td class="align-middle white-space-nowrap">
+                        <div class="dropdown font-sans-serif">
+                          <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal float-right" type="button" id="dropdown0" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"><span class="fas fa-ellipsis-h fs--1"></span></button>
+                          <div class="dropdown-menu dropdown-menu-right border py-2" aria-labelledby="dropdown0"><a class="dropdown-item" href="/customers/{{$customers->id}}">View</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="row align-items-center">
+                <div class="pagination d-none"></div>
+                <div class="col">
+                  <p class="mb-0 fs--1"><span class="d-none d-sm-inline-block mr-2" data-list-info="data-list-info"> </span><span class="d-none d-sm-inline-block mr-2">&mdash;  </span><a class="fw-semi-bold" href="#!" data-list-view="*">View all<span class="fas fa-angle-right ml-1" data-fa-transform="down-1"></span></a></p>
+                </div>
+                <div class="col-auto d-flex">
+                  <button class="btn btn-sm btn-primary" type="button" data-list-pagination="prev"><span>Previous</span></button>
+                  <button class="btn btn-sm btn-primary px-4 ml-2" type="button" data-list-pagination="next"><span>Next</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
           <footer>
             <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
               <div class="col-12 col-sm-auto text-center">
@@ -523,24 +598,21 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="../vendors/popper/popper.min.js"></script>
-    <script src="../vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="../vendors/anchorjs/anchor.min.js"></script>
-    <script src="../vendors/is/is.min.js"></script>
-    <script src="../vendors/chart/Chart.min.js"></script>
-    <script src="../vendors/leaflet/leaflet.js"></script><script src="../js/flatpickr.js"></script>
-    <script src="../vendors/leaflet.markercluster/leaflet.markercluster.js"></script>
-    <script src="../vendors/leaflet.tilelayer.colorfilter/leaflet-tilelayer-colorfilter.min.js"></script>
-    <script src="../vendors/countup/countUp.umd.js"></script>
-    <script src="../vendors/fontawesome/all.min.js"></script>
-    <script src="../vendors/lodash/lodash.min.js"></script>
+    <script src="vendors/popper/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/anchorjs/anchor.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="vendors/chart/Chart.min.js"></script>
+    <script src="vendors/leaflet/leaflet.js"></script>
+    <script src="vendors/leaflet.markercluster/leaflet.markercluster.js"></script>
+    <script src="vendors/leaflet.tilelayer.colorfilter/leaflet-tilelayer-colorfilter.min.js"></script>
+    <script src="vendors/countup/countUp.umd.js"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="vendors/lodash/lodash.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="../vendors/list.js/list.min.js"></script>
+    <script src="vendors/list.js/list.min.js"></script>
     <script src="/js/theme.js"></script>
-  
-    <script src="../vendors/choices/choices.min.js"></script>
-    
-    <script src="../vendors/dropzone/dropzone.min.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:100,200,300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
   </body>
 

@@ -3,6 +3,10 @@
 use App\Http\Controllers\LoansController;
 use App\Http\Controllers\PaymentTransactionsController;
 use App\Http\Controllers\RepaymentsController;
+use App\Http\Controllers\BankAccountController;
+use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\SuppliersController;
+use App\Models\BankAccount;
 use App\Models\Loans;
 use App\Models\Repayments;
 use Illuminate\Support\Facades\Route;
@@ -34,7 +38,20 @@ Route::post('/transactions/create', [PaymentTransactionsController::class,'store
 Route::post('/loans', [LoansController::class,'store']);
 Route::get('/loans/{id}', [LoansController::class,'show']);
 Route::get('/loans/{id}/edit', [LoansController::class,'edit']);
+Route::get('/banks', [BankAccountController::class,'index']);
 Route::get('/banks/add', [BankAccountController::class,'create']);
+Route::post('/banks', [BankAccountController::class,'store']);
+
+
+Route::get('/customers', [CustomersController::class,'index']);
+Route::get('/customers/add', [CustomersController::class,'create']);
+Route::post('/customers', [CustomersController::class,'store']);
+
+
+Route::get('/suppliers', [SuppliersController::class,'index']);
+Route::get('/suppliers/add', [SuppliersController::class,'create']);
+Route::post('/suppliers', [SuppliersController::class,'store']);
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

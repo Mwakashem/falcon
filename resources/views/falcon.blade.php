@@ -77,7 +77,7 @@
               <button class="btn navbar-toggler-humburger-icon navbar-vertical-toggle" data-toggle="tooltip" data-placement="left" title="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
 
             </div><a class="navbar-brand" href="index.html">
-              <div class="d-flex align-items-center py-3"><img class="mr-2" src="/img/illustrations/falcon.png" alt="" width="40" /><span class="font-sans-serif">falcon</span>
+              <div class="d-flex align-items-center py-3 "><img class="mr-2 rounded-circle" src="/img/qubes.png" alt="" width="40" /><span class="font-sans-serif ">Qubes ERP</span>
               </div>
             </a>
           </div>
@@ -89,11 +89,13 @@
                     </div>
                   </a>
                   <ul class="nav collapse show" id="home" data-parent="#navbarVerticalCollapse">
-                    <li class="nav-item"><a class="nav-link" href="/add">Add Loan</a>
+                    <li class="nav-item"><a class="nav-link" href="/loans/add">Add Loan</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="/schedule">Loan Schedule</a>
+                    <li class="nav-item"><a class="nav-link" href="/banks/add">Add Bank</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="/compare">Compare</a>
+                    <li class="nav-item"><a class="nav-link" href="/customers/add">Add Customers</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/suppliers/add">Add Suppliers</a>
                     </li>
                   </ul>
                 </li>
@@ -112,11 +114,11 @@
             <ul class="navbar-nav align-items-center d-none d-lg-block">
               <li class="nav-item">
                 <div class="search-box" data-list='{"valueNames":["title"]}'>
-                  <form class="position-relative" data-toggle="search" data-display="static">
+                  {{-- <form class="position-relative" data-toggle="search" data-display="static">
                     <input class="form-control search-input fuzzy-search" type="search" placeholder="Search..." aria-label="Search" />
                     <span class="fas fa-search search-box-icon"></span>
 
-                  </form>
+                  </form> --}}
                   <button class="btn-close position-absolute right-0 top-50 translate-middle shadow-none p-1 mr-1 fs--2" type="button" data-dismiss="search"></button>
                   <div class="dropdown-menu border font-base left-0 mt-2 py-0 overflow-hidden w-100">
                     <div class="scrollbar list py-3" style="max-height: 24rem;">

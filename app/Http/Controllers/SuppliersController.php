@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BankAccount;
+use App\Models\Suppliers;
 use Illuminate\Http\Request;
 
-class BankAccountController extends Controller
+class SuppliersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class BankAccountController extends Controller
     public function index()
     {
         //
-        $banks = BankAccount::latest()->get();
+        $suppliers = Suppliers::latest()->get();
 
-        return view('falconbanks', compact('banks'));
+        return view('falconsuppliers', compact('suppliers'));
     }
 
     /**
@@ -27,7 +27,8 @@ class BankAccountController extends Controller
      */
     public function create()
     {
-        return view('addbank');
+        //
+        return view('addsuppliers');
     }
 
     /**
@@ -40,23 +41,23 @@ class BankAccountController extends Controller
     {
         //
         $data = request()->validate([
-            'bankName'=>'required',
+            'name'=>'required',
+            'phoneNumber'=>'required',
+            'email'=>'required',
             'accountNumber'=>'required',
-            'accountType'=>'required',
         ]);
 
-        BankAccount::create($data);     
-       return redirect ('/banks');
-
+        Suppliers::create($data);     
+       return redirect ('/suppliers');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\BankAccount  $bankAccount
+     * @param  \App\Models\Suppliers  $suppliers
      * @return \Illuminate\Http\Response
      */
-    public function show(BankAccount $bankAccount)
+    public function show(Suppliers $suppliers)
     {
         //
     }
@@ -64,10 +65,10 @@ class BankAccountController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\BankAccount  $bankAccount
+     * @param  \App\Models\Suppliers  $suppliers
      * @return \Illuminate\Http\Response
      */
-    public function edit(BankAccount $bankAccount)
+    public function edit(Suppliers $suppliers)
     {
         //
     }
@@ -76,10 +77,10 @@ class BankAccountController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\BankAccount  $bankAccount
+     * @param  \App\Models\Suppliers  $suppliers
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BankAccount $bankAccount)
+    public function update(Request $request, Suppliers $suppliers)
     {
         //
     }
@@ -87,10 +88,10 @@ class BankAccountController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\BankAccount  $bankAccount
+     * @param  \App\Models\Suppliers  $suppliers
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BankAccount $bankAccount)
+    public function destroy(Suppliers $suppliers)
     {
         //
     }

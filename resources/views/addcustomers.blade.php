@@ -323,23 +323,27 @@
             </div>
           </div>
           <div class="card bg-light mb-3">
-            <form action="/banks" method="post">
+            <form action="/customers" method="post">
               @csrf
             <div class="card-body p-3">
               <div class="row">
                 <div class="col">
-                  <label class="form-label" for="bankName">Bank Name</label>
-                  <input class="form-control" name="bankName" id="bankName" type="text" placeholder="Enter Bank Name" required />
+                  <label class="form-label" for="bankName"> Name</label>
+                  <input class="form-control" name="name" id="name" type="text" placeholder="Enter Bank Name" required />
                 </div>
                 <div class="col">
-                  <label class="form-label" for="amount">Account Number</label>
-                  <input class="form-control" name="accountNumber" id="amount" type="text" placeholder="Enter Account Number" required />
+                  <label class="form-label" for="amount">Phone Number</label>
+                  <input class="form-control" name="phoneNumber" id="amount" type="text" placeholder="Enter Account Number" required />
                 </div>
               </div>
-                <div class="col">
-                  <label class="form-label" for="bankName">Account Type</label>
-                  <input class="form-control" name="accountType" id="bankName" type="text" placeholder="Interest rate" required />
-                </div>
+              <div class="col">
+                <label class="form-label" for="bankName">Email Address</label>
+                <input class="form-control" name="email" id="bankName" type="text" placeholder="Interest rate" required />
+              </div>
+              <div class="col">
+                <label class="form-label" for="bankName">Account Number</label>
+                <input class="form-control" name="accountNumber" id="bankName" type="text" placeholder="Interest rate" required />
+              </div>
                 <input type="submit" class=" mt-4 ml-20 btn btn-primary" value="submit"> 
                 </div>            
 
