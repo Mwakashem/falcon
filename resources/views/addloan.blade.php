@@ -327,11 +327,20 @@
               @csrf
             <div class="card-body p-3">
               <div class="row">
-                <div class="col">
+                {{-- <div class="col">
                   <label class="form-label" for="bankName">Bank Name</label>
                   <input class="form-control" name="bankName" id="bankName" type="text" placeholder="Enter Bank Name" required />
-                </div>
+                </div> --}}
                 <div class="col">
+                  <label class="form-lable" for="">Bank Name</label>
+                  <select class="form-select" id="">
+                    <option>Choose...</option>
+                    @foreach($banks as $banks)
+                    <option value="{{$banks->bankName}}">{{$banks->bankName}}</option>  
+                  @endforeach
+                </div><br>
+
+                <div class="col mt-2">
                   <label class="form-label" for="amount">Loan Amount</label>
                   <input class="form-control" name="loanAmount" id="amount" type="text" placeholder="Enter Loan Amount" required />
                 </div>
