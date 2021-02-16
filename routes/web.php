@@ -52,7 +52,6 @@ Route::get('/suppliers', [SuppliersController::class,'index'])->middleware('auth
 Route::get('/suppliers/add', [SuppliersController::class,'create'])->middleware('auth');
 Route::post('/suppliers', [SuppliersController::class,'store'])->middleware('auth');
 
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
