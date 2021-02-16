@@ -25,6 +25,8 @@ use Laravel\Jetstream\Rules\Role;
 
 Route::get('/',[LoansController::class,'index'])->middleware('auth')->middleware('auth');
 
+Route::get('/loans', [LoansController::class,'index'])->middleware('auth');
+
 Route::get('/loans/add', [LoansController::class,'create'])->middleware('auth');
 Route::any('/loans/{id}/repayments/create', [RepaymentsController::class,'create'])->middleware('auth');
 Route::post('/loans/{id}/repayments', [RepaymentsController::class,'store'])->middleware('auth');
