@@ -46,13 +46,14 @@ class PaymentTransactionsController extends Controller
         $data = request()->validate([
             'installmentNumber'=>'required',
             'paymentAmount'=>'required',
+            'principal'=>'required',
+            'interest'=>'required',
             'chequeNumber'=>'required',
             'date_deposited'=>'required',
         ]);
-
         PaymentTransactions::create($data);
 
-        return redirect ('/');
+        return redirect ('/transactions');
     }
 
     /**

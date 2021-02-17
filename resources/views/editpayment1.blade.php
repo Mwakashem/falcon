@@ -203,6 +203,18 @@
                   <input class="form-control" value="{{$repayments->scheduledPayment}}" name="paymentAmount" id="amount" type="text" placeholder="Enter Loan Amount" required />
                 </div>
               </div>
+              <div class="row">
+                <div class="col">
+                  <label class="form-label" for="amount">Principal Amount</label>
+                  <input class="form-control" value="{{$repayments->principal}}" name="principal" id="amount" type="text" placeholder="Enter Loan Amount" required />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label class="form-label" for="amount">Principal Amount</label>
+                  <input class="form-control" value="{{$repayments->interest}}" name="interest" id="amount" type="text" placeholder="Enter Loan Amount" required />
+                </div>
+              </div>
                 <div class="col">
                   <label class="form-label" for="bankName">Cheque Number</label>
                   <input class="form-control" name="chequeNumber" id="bankName" type="text" placeholder="Cheque No." required />
