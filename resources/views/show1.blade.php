@@ -313,7 +313,7 @@
                               <div class="avatar-name rounded-circle"><span>#</span></div>
                             </div>
                             <div class="flex-1">
-                              <h5 class="mb-0 fs--1">Ksh.{{$repayments->repaymentNumber}}</h5>
+                              <h5 class="mb-0 fs--1">{{$repayments->repaymentNumber}}</h5>
                             </div>
                             
                           </div>

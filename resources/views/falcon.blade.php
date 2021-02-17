@@ -264,9 +264,13 @@
                       </th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="name">Bank Name</th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">Loan Amount</th>
+                      
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">Next Repayment date</th> 
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">End date</th>                      
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">principal</th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Interest Rate</th>
                       <th class="sort pr-1 align-middle white-space-nowrap text-center" data-sort="payment">StartDate</th>
-                      <th class="sort pr-1 align-middle white-space-nowrap text-right" data-sort="amount">Installment</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap text-right" data-sort="amount">Interest Outstanding</th>
                       <th class="no-sort pr-1 align-middle data-table-row-action"></th>
                     </tr>
                   </thead>
@@ -278,12 +282,16 @@
                           <input class="form-check-input" type="checkbox" id="recent-purchase-0" data-bulk-select-row="data-bulk-select-row" />
                         </div>
                       </td>
+                      {{-- $loans->repayments()->orderBy('id', 'DESC')->first()->principal --}}
                       <th class="align-middle white-space-nowrap name"><a href="pages/customer-details.html">{{$loans->bankName}}</a></th>
-                      <td class="align-middle white-space-nowrap email">Ksh.{{$loans->loanAmount}}</td>
+                      <td class="align-middle white-space-nowrap email">Ksh.{{number_format($loans->loanAmount)}}</td>
+                      <td class="align-middle white-space-nowrap email">{{$loans->repayments()->orderBy('id', 'ASC')->first()->start_date}}</td>
+                      <td class="align-middle white-space-nowrap email">{{$loans->repayments()->orderBy('id', 'DESC')->first()->start_date}}</td>
+                      <td class="align-middle white-space-nowrap email">Ksh.{{number_format($loans->repayments()->orderBy('id', 'ASC')->first()->principal)}}</td>
                       <td class="align-middle white-space-nowrap product">{{$loans->interestRate}}%</td>
                       <td class="align-middle text-center fs-0 white-space-nowrap payment"><span class="badge badge rounded-pill badge-soft-success">{{$loans->startDate}}<span class="ml-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
                       </td>
-                      <td class="align-middle text-right amount">Ksh.{{ ($loans->loanAmount)*($loans->interestRate)*0.01}}</td>
+                      <td class="align-middle text-right amount">Ksh.{{ $loans->repayments()->orderBy('id', 'ASC')->first()->interest}}</td>
                       <td class="align-middle white-space-nowrap">
                         <div class="dropdown font-sans-serif">
                           <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal float-right" type="button" id="dropdown0" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"><span class="fas fa-ellipsis-h fs--1"></span></button>
