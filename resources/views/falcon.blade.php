@@ -76,7 +76,7 @@
 
               <button class="btn navbar-toggler-humburger-icon navbar-vertical-toggle" data-toggle="tooltip" data-placement="left" title="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
 
-            </div><a class="navbar-brand" href="index.html">
+            </div><a class="navbar-brand" href="/">
               <div class="d-flex align-items-center py-3 "><img class="mr-2 rounded-circle" src="/img/qubes.png" alt="" width="40" /><span class="font-sans-serif ">Qubes</span>
               </div>
             </a>
@@ -89,9 +89,9 @@
                     </div>
                   </a>
                   <ul class="nav collapse show" id="home" data-parent="#navbarVerticalCollapse">
-                    <li class="nav-item"><a class="nav-link" href="/loans/add">Loan Listings</a>
+                    <li class="nav-item"><a class="nav-link" href="/loans">Loan Listings</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="/loans">Add New Loans</a>
+                    <li class="nav-item"><a class="nav-link" href="/loans/add">Add New Loans</a>
                     </li>
                   </ul>
                 </li>
@@ -124,7 +124,7 @@
             <ul class="nav collapse" id="forms" data-parent="#navbarVerticalCollapse">
               <li class="nav-item"><a class="nav-link" href="/suppliers"> Supplier Listings</a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="/supplier/add">Add suppliers</a>
+              <li class="nav-item"><a class="nav-link" href="/suppliers/add">Add suppliers</a>
               </li>
             </ul>
           </li>
@@ -137,113 +137,13 @@
           <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand">
 
             <button class="btn navbar-toggler-humburger-icon navbar-toggler mr-1 mr-sm-3" type="button" data-toggle="collapse" data-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
-            <a class="navbar-brand mr-1 mr-sm-3" href="index.html">
+            <a class="navbar-brand mr-1 mr-sm-3" href="/">
               <div class="d-flex align-items-center"><img class="mr-2" src="/img/illustrations/falcon.png" alt="" width="40" /><span class="font-sans-serif">falcon</span>
               </div>
             </a>
             <ul class="navbar-nav align-items-center d-none d-lg-block">
               <li class="nav-item">
                 <div class="search-box" data-list='{"valueNames":["title"]}'>
-                  {{-- <form class="position-relative" data-toggle="search" data-display="static">
-                    <input class="form-control search-input fuzzy-search" type="search" placeholder="Search..." aria-label="Search" />
-                    <span class="fas fa-search search-box-icon"></span>
-
-                  </form> --}}
-                  {{-- <button class="btn-close position-absolute right-0 top-50 translate-middle shadow-none p-1 mr-1 fs--2" type="button" data-dismiss="search"></button> --}}
-                  {{-- <div class="dropdown-menu border font-base left-0 mt-2 py-0 overflow-hidden w-100">
-                    <div class="scrollbar list py-3" style="max-height: 24rem;">
-                      <h6 class="dropdown-header fw-medium text-uppercase px-card fs--2 pt-0 pb-2">Recently Browsed</h6><a class="dropdown-item fs--1 px-card py-1 hover-primary" href="pages/events.html">
-                        <div class="d-flex align-items-center">
-                          <span class="fas fa-circle mr-2 text-300 fs--2"></span>
-
-                          <div class="fw-normal title">Pages <span class="fas fa-chevron-right mx-1 text-500 fs--2" data-fa-transform="shrink-2"></span> Events</div>
-                        </div>
-                      </a>
-                      <a class="dropdown-item fs--1 px-card py-1 hover-primary" href="e-commerce/customers.html">
-                        <div class="d-flex align-items-center">
-                          <span class="fas fa-circle mr-2 text-300 fs--2"></span>
-
-                          <div class="fw-normal title">E-commerce <span class="fas fa-chevron-right mx-1 text-500 fs--2" data-fa-transform="shrink-2"></span> Customers</div>
-                        </div>
-                      </a>
-
-                      <hr class="bg-200" />
-                      <h6 class="dropdown-header fw-medium text-uppercase px-card fs--2 pt-0 pb-2">Suggested Filter</h6><a class="dropdown-item px-card py-1 fs-0" href="e-commerce/customers.html">
-                        <div class="d-flex align-items-center"><span class="badge fw-medium text-decoration-none mr-2 badge-soft-warning">customers:</span>
-                          <div class="flex-1 fs--1 title">All customers list</div>
-                        </div>
-                      </a>
-                      <a class="dropdown-item px-card py-1 fs-0" href="pages/events.html">
-                        <div class="d-flex align-items-center"><span class="badge fw-medium text-decoration-none mr-2 badge-soft-success">events:</span>
-                          <div class="flex-1 fs--1 title">Latest events in current month</div>
-                        </div>
-                      </a>
-                      <a class="dropdown-item px-card py-1 fs-0" href="e-commerce/product-grid.html">
-                        <div class="d-flex align-items-center"><span class="badge fw-medium text-decoration-none mr-2 badge-soft-info">products:</span>
-                          <div class="flex-1 fs--1 title">Most popular products</div>
-                        </div>
-                      </a>
-
-                      <hr class="bg-200" />
-                      <h6 class="dropdown-header fw-medium text-uppercase px-card fs--2 pt-0 pb-2">Files</h6><a class="dropdown-item px-card py-2" href="#!">
-                        <div class="d-flex align-items-center">
-                          <div class="file-thumbnail mr-2"><img class="border h-100 w-100 fit-cover rounded-3" src="/img/products/3-thumb.png" alt="" /></div>
-                          <div class="flex-1">
-                            <h6 class="mb-0 title">iPhone</h6>
-                            <p class="fs--2 mb-0"><span class="fw-semi-bold">Antony</span><span class="fw-medium text-600 ml-2">27 Sep at 10:30 AM</span></p>
-                          </div>
-                        </div>
-                      </a>
-                      <a class="dropdown-item px-card py-2" href="#!">
-                        <div class="d-flex align-items-center">
-                          <div class="file-thumbnail mr-2"><img class="img-fluid" src="/img/icons/zip.png" alt="" /></div>
-                          <div class="flex-1">
-                            <h6 class="mb-0 title">Falcon v1.8.2</h6>
-                            <p class="fs--2 mb-0"><span class="fw-semi-bold">John</span><span class="fw-medium text-600 ml-2">30 Sep at 12:30 PM</span></p>
-                          </div>
-                        </div>
-                      </a>
-
-                      <hr class="bg-200" />
-                      <h6 class="dropdown-header fw-medium text-uppercase px-card fs--2 pt-0 pb-2">Members</h6><a class="dropdown-item px-card py-2" href="pages/profile.html">
-                        <div class="d-flex align-items-center">
-                          <div class="avatar avatar-l status-online mr-2">
-                            <img class="rounded-circle" src="/img/team/1.jpg" alt="" />
-
-                          </div>
-                          <div class="flex-1">
-                            <h6 class="mb-0 title">Anna Karinina</h6>
-                            <p class="fs--2 mb-0">Technext Limited</p>
-                          </div>
-                        </div>
-                      </a>
-                      <a class="dropdown-item px-card py-2" href="pages/profile.html">
-                        <div class="d-flex align-items-center">
-                          <div class="avatar avatar-l mr-2">
-                            <img class="rounded-circle" src="/img/team/2.jpg" alt="" />
-
-                          </div>
-                          <div class="flex-1">
-                            <h6 class="mb-0 title">Antony Hopkins</h6>
-                            <p class="fs--2 mb-0">Brain Trust</p>
-                          </div>
-                        </div>
-                      </a>
-                      <a class="dropdown-item px-card py-2" href="pages/profile.html">
-                        <div class="d-flex align-items-center">
-                          <div class="avatar avatar-l mr-2">
-                            <img class="rounded-circle" src="/img/team/3.jpg" alt="" />
-
-                          </div>
-                          <div class="flex-1">
-                            <h6 class="mb-0 title">Emma Watson</h6>
-                            <p class="fs--2 mb-0">Google</p>
-                          </div>
-                        </div>
-                      </a>
-
-                    </div>
-                  </div> --}}
                 </div>
               </li>
             </ul>
@@ -321,7 +221,7 @@
 
                 <div class="card-body position-relative">
                   <h6>Totals<span class="badge badge-soft-success rounded-pill ml-2"></span></h6>
-                  <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif" data-countup='{"endValue":{{$loans->SUM('loanAmount')}},"prefix":"Ksh."}'>0</div><a class="fw-semi-bold fs--1 text-nowrap" href="index.html">Statistics<span class="fas fa-angle-right ml-1" data-fa-transform="down-1"></span></a>
+                  <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif" data-countup='{"endValue":{{$loans->SUM('loanAmount')}},"prefix":"Ksh."}'>0</div><a class="fw-semi-bold fs--1 text-nowrap" href="/">Statistics<span class="fas fa-angle-right ml-1" data-fa-transform="down-1"></span></a>
                 </div>
               </div>
             </div>
@@ -364,9 +264,13 @@
                       </th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="name">Bank Name</th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">Loan Amount</th>
+                      
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">Next Repayment date</th> 
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">End date</th>                      
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">principal</th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Interest Rate</th>
                       <th class="sort pr-1 align-middle white-space-nowrap text-center" data-sort="payment">StartDate</th>
-                      <th class="sort pr-1 align-middle white-space-nowrap text-right" data-sort="amount">Installment</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap text-right" data-sort="amount">Interest Outstanding</th>
                       <th class="no-sort pr-1 align-middle data-table-row-action"></th>
                     </tr>
                   </thead>
@@ -378,12 +282,16 @@
                           <input class="form-check-input" type="checkbox" id="recent-purchase-0" data-bulk-select-row="data-bulk-select-row" />
                         </div>
                       </td>
+                      {{-- $loans->repayments()->orderBy('id', 'DESC')->first()->principal --}}
                       <th class="align-middle white-space-nowrap name"><a href="pages/customer-details.html">{{$loans->bankName}}</a></th>
-                      <td class="align-middle white-space-nowrap email">Ksh.{{$loans->loanAmount}}</td>
+                      <td class="align-middle white-space-nowrap email">Ksh.{{number_format($loans->loanAmount)}}</td>
+                      <td class="align-middle white-space-nowrap email">{{$loans->repayments()->orderBy('id', 'ASC')->first()->start_date}}</td>
+                      <td class="align-middle white-space-nowrap email">{{$loans->repayments()->orderBy('id', 'DESC')->first()->start_date}}</td>
+                      <td class="align-middle white-space-nowrap email">Ksh.{{number_format($loans->repayments()->orderBy('id', 'ASC')->first()->principal)}}</td>
                       <td class="align-middle white-space-nowrap product">{{$loans->interestRate}}%</td>
                       <td class="align-middle text-center fs-0 white-space-nowrap payment"><span class="badge badge rounded-pill badge-soft-success">{{$loans->startDate}}<span class="ml-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
                       </td>
-                      <td class="align-middle text-right amount">Ksh.{{ ($loans->loanAmount)*($loans->interestRate)*0.01}}</td>
+                      <td class="align-middle text-right amount">Ksh.{{ $loans->repayments()->orderBy('id', 'ASC')->first()->interest}}</td>
                       <td class="align-middle white-space-nowrap">
                         <div class="dropdown font-sans-serif">
                           <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal float-right" type="button" id="dropdown0" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"><span class="fas fa-ellipsis-h fs--1"></span></button>

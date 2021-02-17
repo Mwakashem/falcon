@@ -17,6 +17,8 @@ class CreatePaymentTransactionsTable extends Migration
             $table->id();
             $table->string('installmentNumber');
             $table->string('paymentAmount');
+            $table->string('principal');
+            $table->string('interest');            
             $table->string('chequeNumber');            
             $table->string('date_deposited');
             $table->timestamps();

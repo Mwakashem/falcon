@@ -54,7 +54,9 @@ class LoansController extends Controller
         $data = request()->validate([
             'bankName'=>'required',
             'loanAmount'=>'required',
+            'differed'=>'required',
             'interestRate'=>'required',
+            'loanType'=>'required',
             'loanDuration'=>'required',
             'numberOfInstallments'=>'required',
             'startDate'=>'required',
