@@ -16,12 +16,14 @@ class CreateRepaymentsTable extends Migration
         Schema::create('repayments', function (Blueprint $table) {
             $table->id();            
             $table->string('loans_id');
+            $table->string('repaymentNumber');
             $table->string('start_date');
             $table->string('beginningBalance');
             $table->double('interest');
             $table->double('principal');
             $table->string('scheduledPayment');
             $table->string('endingBalance');
+            $table->string('status')->default('Not Paid');
             $table->timestamps();
         });
     }

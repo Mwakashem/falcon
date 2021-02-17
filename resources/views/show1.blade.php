@@ -294,7 +294,8 @@
                 <table class="table table-sm table-striped fs--1 mb-0">
                   <thead class="bg-200 text-900">
                     <tr>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="name">#LoanId</th>
+                      {{-- <th class="sort pr-1 align-middle white-space-nowrap" data-sort="name">#LoanId</th> --}}
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="name">#Repayment Number</th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">PaymentDate</th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">Beginning Balance</th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="phone">Interest</th>
@@ -312,18 +313,19 @@
                               <div class="avatar-name rounded-circle"><span>#</span></div>
                             </div>
                             <div class="flex-1">
-                              <h5 class="mb-0 fs--1">{{$repayments->id}}</h5>
+                              <h5 class="mb-0 fs--1">{{$repayments->repaymentNumber}}</h5>
                             </div>
+                            
                           </div>
                         </a>
                       </td>
                         <td class="email align-middle py-2"><a href="#">{{date('d-m-Y', strtotime($repayments->start_date))}}</a></td>
-                        <td class="email align-middle py-2"><a href="#">{{$repayments->beginningBalance}}</a></td>
-                      <td class="phone align-middle white-space-nowrap py-2"><a href="">{{$repayments->interest}}</a></td>
-                      <td class="address align-middle white-space-nowrap pl-5 py-2">{{$repayments->scheduledPayment}} </td>
-                      <td class="joined align-middle py-2">{{$repayments->endingBalance}}</td>
+                        <td class="email align-middle py-2"><a href="#">{{ number_format($repayments->beginningBalance), 2}}</a></td>
+                      <td class="phone align-middle white-space-nowrap py-2"><a href="">{{number_format($repayments->interest)}}</a></td>
+                      <td class="address align-middle white-space-nowrap pl-5 py-2">{{number_format($repayments->scheduledPayment)}} </td>
+                      <td class="joined align-middle py-2">{{number_format($repayments->endingBalance)}}</td>
                       <td class="align-middle white-space-nowrap py-2 text-right">
-                        <div class="dropdown font-sans-serif">{{ ucfirst(trans($repayments->status)) }}
+                        <div class="dropdown font-sans-serif">{{ $repayments->status }}
                           <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal" type="button" id="customer-dropdown-0" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"><svg class="svg-inline--fa fa-ellipsis-h fa-w-16 fs--1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-h" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path></svg><!-- <span class="fas fa-ellipsis-h fs--1"></span> --></button>
                           <div class="dropdown-menu dropdown-menu-right border py-0" aria-labelledby="customer-dropdown-0">
                             <div class="bg-white py-2"><a class="dropdown-item" href="/repayments/update/{{$repayments->id}}/edit">  Pay

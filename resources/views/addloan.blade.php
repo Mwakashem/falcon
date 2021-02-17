@@ -193,37 +193,58 @@
             <form action="/loans" method="post">
               @csrf
             <div class="card-body p-3">
-              <div class="row">
+              <div class="row g-3">
                 {{-- <div class="col">
                   <label class="form-label" for="bankName">Bank Name</label>
                   <input class="form-control" name="bankName" id="bankName" type="text" placeholder="Enter Bank Name" required />
-                </div> --}}
-                <div class="col">
-                  <label class="form-lable" for="">Bank Name</label>
-                  <select class="form-select" id="">
+                </div> --}}                
+                <div class="col-4">
+                  <label class="form-lable" for="bankName">Bank Name</label>
+                  <select name="bankName" class="form-select" id="">
                     <option>Choose...</option>
                     @foreach($banks as $banks)
                     <option value="{{$banks->bankName}}">{{$banks->bankName}}</option>  
                   @endforeach
-                </div><br>
+                  </select>
+                </div>
 
-                <div class="col mt-2">
+                <div class="col-4">
                   <label class="form-label" for="amount">Loan Amount</label>
                   <input class="form-control" name="loanAmount" id="amount" type="text" placeholder="Enter Loan Amount" required />
                 </div>
-              </div>
-                <div class="col">
-                  <label class="form-label" for="bankName">Interest Rate</label>
-                  <input class="form-control" name="interestRate" id="bankName" type="text" placeholder="Interest rate" required />
+                <div class="col-4">
+                  <label class="" for="form-label">Differed Interest Rate</label>
+                  <select class="form-select" name="differed" id="inlineFormSelectPref">
+                    <option selected="">Choose...</option>
+                    <option value="Not Active">Not Active</option>
+                    <option value="Active">Active</option>
+                  </select>
                 </div>
-                <div class="col">
-                  <label class="form-label" for="bankName">Loan Duration</label>
+              </div>
+              <div class="row">
+              <div class="col-6">
+                <label class="form-label" for="bankName">Interest Rate</label>
+                <input class="form-control" name="interestRate" id="bankName" type="text" placeholder="Interest rate" required />
+              </div>
+              <div class="col-6">
+                <label class="form-label" for="">Loan Type</label>
+                <select class="form-select" name="loanType" id="inlineFormSelectPref">
+                  <option selected="">Choose loan Type....</option>
+                  <option value="Stright Line">Stright Line</option>
+                  <option value="Reducing Balance">Reducing Balance</option>
+                </select>
+              </div>
+              </div>
+              <div class="row">
+                <div class="col-6 mb-3">
+                  <label class="form-label" for="bankName">Loan Duration(Yrs)</label>
                   <input class="form-control" name="loanDuration" id="bankName" type="text" placeholder="Enter Bank Name" required />
                 </div>
-                <div class="col">
+                <div class="col-6">
                   <label class="form-label" for="bankName">No. of Installments</label>
                   <input class="form-control" name="numberOfInstallments" id="bankName" type="text" placeholder="No.of Installments" required />
                 </div>
+              </div>
                 <div class="d-flex justify-content-between">
                 <div class="col-4">
                   <label class="form-label" for="datepicker">Start Date</label>

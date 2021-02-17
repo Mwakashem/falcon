@@ -235,12 +235,18 @@
                       ?>
                       <?php $interest = $loanAmount * $monthlyRate;?>
               
-              <div class="col-2">
-                <label class="sr-only" for="inlineFormInputName">LoanId</label>
-                <input class="form-control" value="@php
-                echo ($loans_id)
-            @endphp" name="loans_id[@php echo ($i)@endphp]" type="text" placeholder="" />
-              </div>
+                      <div class="col-2">
+                        <label class="sr-only" for="inlineFormInputName">LoanId</label>
+                        <input class="form-control" value="@php
+                        echo ($loans_id)
+                    @endphp" name="loans_id[@php echo ($i)@endphp]" type="text" placeholder="" />
+                      </div>
+                      <div class="col-2">
+                        <label class="sr-only" for="inlineFormInputName">Repayment Number</label>
+                        <input class="form-control" value="@php
+                        echo ($i+1)
+                    @endphp" name="repaymentNumber[@php echo ($i)@endphp]" type="text" placeholder="" />
+                      </div>
               
               <div class="col-2">
                 <label class="sr-only" for="inlineFormInputName">Date</label>
@@ -252,21 +258,21 @@
               <div class="col-2">
                 <label class="sr-only" for="inlineFormInputName">Beginning Balance</label>
                 <input class="form-control" value="@php
-                echo ($loanAmount)
+                echo round($loanAmount, -2)
             @endphp" name="beginningBalance[@php echo ($i)@endphp]" type="text" placeholder="" />
               </div>
               <?php $interest = $loanAmount * $monthlyRate;?>
               <div class="col-1">
                 <label class="sr-only" for="inlineFormInputName">Interest</label>
                 <input class="form-control" value="@php
-                echo($interest)
+                echo round($interest, -2)
             @endphp" name="interest[@php echo ($i)@endphp]" type="text" placeholder="" />
               </div>
               <?php $monthlyPrincipal = $payment - $interest;?>
               <div class="col-1">
                 <label class="sr-only" for="inlineFormInputName">Principal</label>
                 <input class="form-control" value="@php
-                echo ($monthlyPrincipal)
+                echo round($monthlyPrincipal, -2)
             @endphp" name="principal[@php echo ($i)@endphp]" type="text" placeholder="" />
               </div>
 
@@ -276,7 +282,7 @@
               <div class="col-2">
                 <label class="sr-only" for="inlineFormInputName">Scheduled Payment</label>
                 <input class="form-control" value="@php
-                echo ($totalpayment)
+                echo round($totalpayment, -2)
             @endphp" name="scheduledPayment[@php echo ($i)@endphp]" type="text" placeholder="" />
               </div>
               @php

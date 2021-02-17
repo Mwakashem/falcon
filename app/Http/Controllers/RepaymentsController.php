@@ -41,6 +41,7 @@ class RepaymentsController extends Controller
     {
         $data = request()->validate([
             'loans_id.*'=>'required',
+            'repaymentNumber.*'=>'required',
             'start_date.*'=>'required',
             'beginningBalance.*'=>'required',
             'interest.*'=>'required',
@@ -55,6 +56,7 @@ class RepaymentsController extends Controller
     for ($i=0; $i < $count; $i++) { 
 	  $repayments = new Repayments();
 	  $repayments->loans_id = $request->loans_id[$i];
+      $repayments->repaymentNumber = $request->repaymentNumber[$i];
 	  $repayments->start_date = $request->start_date[$i];
       $repayments->beginningBalance = $request->beginningBalance[$i];
       $repayments->interest = $request->interest[$i];

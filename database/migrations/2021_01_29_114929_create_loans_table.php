@@ -17,7 +17,9 @@ class CreateLoansTable extends Migration
             $table->id();
             $table->string('bankName');
             $table->string('loanAmount');
+            $table->string('differed');
             $table->double('interestRate');
+            $table->string('loanType');
             $table->string('loanDuration');
             $table->string('numberOfInstallments');
             
