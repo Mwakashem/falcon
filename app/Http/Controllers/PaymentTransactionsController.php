@@ -16,6 +16,9 @@ class PaymentTransactionsController extends Controller
     public function index()
     {
         //
+        $transactions = PaymentTransactions::latest()->get();
+
+        return view('falcontransactions', compact('transactions'));
     }
 
     /**

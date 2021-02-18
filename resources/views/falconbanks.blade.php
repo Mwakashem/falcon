@@ -212,7 +212,7 @@
             <div class="card-header">
               <div class="row flex-between-center">
                 <div class="col-6 col-sm-auto d-flex align-items-center pr-0">
-                  <h5 class="fs-0 mb-0 text-nowrap py-2 py-xl-0">Recent Purchases</h5>
+                  <h5 class="fs-0 mb-0 text-nowrap py-2 py-xl-0">Bank Account Listings</h5>
                 </div>
                 <div class="col-6 col-sm-auto ml-auto text-right pl-0">
                   <div class="d-none" id="table-purchases-actions">
@@ -227,7 +227,7 @@
                     </div>
                   </div>
                   <div id="table-purchases-replace-element">
-                    <button class="btn btn-falcon-default btn-sm" type="button"><span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span><span class="d-none d-sm-inline-block ml-1"><a href="/banks/add"> New Loan</a></span></button>
+                    <button class="btn btn-falcon-default btn-sm" type="button"><span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span><span class="d-none d-sm-inline-block ml-1"><a href="/banks/add"> New Bank</a></span></button>
                     {{-- <button class="btn btn-falcon-default btn-sm mx-2" type="button"><span class="fas fa-filter" data-fa-transform="shrink-3 down-2"></span><span class="d-none d-sm-inline-block ml-1">Filter</span></button> --}}
                     {{-- <button class="btn btn-falcon-default btn-sm" type="button"><span class="fas fa-external-link-alt" data-fa-transform="shrink-3 down-2"></span><span class="d-none d-sm-inline-block ml-1">Export</span></button> --}}
                   </div>
@@ -260,7 +260,7 @@
                       </td>
                       <th class="align-middle white-space-nowrap name"><a href="pages/customer-details.html">{{$banks->bankName}}</a></th>
                       <td class="align-middle white-space-nowrap email">{{$banks->accountNumber}}</td>
-                      <td class="align-middle white-space-nowrap product">{{$banks->accountType}}%</td>
+                      <td class="align-middle white-space-nowrap product">{{$banks->accountType}}</td>
                       <td class="align-middle white-space-nowrap">
                         <div class="dropdown font-sans-serif">
                           <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal float-right" type="button" id="dropdown0" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"><span class="fas fa-ellipsis-h fs--1"></span></button>

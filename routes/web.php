@@ -27,6 +27,7 @@ Route::get('/',[LoansController::class,'index'])->middleware('auth')->middleware
 
 Route::post('/loans', [LoansController::class,'store'])->middleware('auth');
 Route::get('/loans', [LoansController::class,'index'])->middleware('auth');
+Route::get('/loans/recent', [LoansController::class,'recent'])->middleware('auth');
 
 Route::get('/loans/add', [LoansController::class,'create'])->middleware('auth');
 
@@ -37,6 +38,7 @@ Route::get('/repayments/update/{paymentTransaction}/edit', [RepaymentsController
 Route::post('/repayments/update/{paymentTransaction}', [RepaymentsController::class,'update'])->middleware('auth');
 Route::get('/transactions/create/{r_id}', [PaymentTransactionsController::class,'create'])->middleware('auth');
 Route::post('/transactions/create', [PaymentTransactionsController::class,'store'])->middleware('auth');
+Route::get('/transactions', [PaymentTransactionsController::class,'index'])->middleware('auth');
 // Route::post('/loan', [LoansController::class,'store1']);
 
 Route::post('/loans', [LoansController::class,'store'])->middleware('auth');

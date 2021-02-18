@@ -85,52 +85,53 @@
             <div class="navbar-vertical-content scrollbar">
               <ul class="navbar-nav flex-column">
                 <li class="nav-item"><a class="nav-link dropdown-indicator" href="#home" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="home">
-                  <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-poll"></span></span><span class="nav-link-text"> Loan Management</span>
+                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-poll"></span></span><span class="nav-link-text"> Loan Management</span>
+                    </div>
+                  </a>
+                  <ul class="nav collapse show" id="home" data-parent="#navbarVerticalCollapse">
+                    <li class="nav-item"><a class="nav-link" href="/loans">Loan Listings</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/loans/add">Add New Loans</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link dropdown-indicator" href="#email" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="email">
+                  <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fab fa-fort-awesome-alt"></span></span><span class="nav-link-text">Bank Accounts</span>
                   </div>
                 </a>
-                <ul class="nav collapse show" id="home" data-parent="#navbarVerticalCollapse">
-                  <li class="nav-item"><a class="nav-link" href="/loans">Loan Listings</a>
+                <ul class="nav collapse" id="email" data-parent="#navbarVerticalCollapse">
+                  <li class="nav-item"><a class="nav-link" href="/banks">Account Listings</a>
                   </li>
-                  <li class="nav-item"><a class="nav-link" href="/loans/add">Add New Loans</a>
+                  <li class="nav-item"><a class="nav-link" href="/banks/add">Add new Accounts</a>
                   </li>
                 </ul>
               </li>
-              <li class="nav-item"><a class="nav-link dropdown-indicator" href="#email" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="email">
-                <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fab fa-fort-awesome-alt"></span></span><span class="nav-link-text">Bank Accounts</span>
+              <li class="nav-item"><a class="nav-link dropdown-indicator" href="#e-commerce" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="e-commerce">
+                <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fa fa-user"></span></span><span class="nav-link-text">Manage Customers</span>
                 </div>
               </a>
-              <ul class="nav collapse" id="email" data-parent="#navbarVerticalCollapse">
-                <li class="nav-item"><a class="nav-link" href="/banks">Account Listings</a>
+              <ul class="nav collapse" id="e-commerce" data-parent="#navbarVerticalCollapse">
+                <li class="nav-item"><a class="nav-link" href="/customers">Customer Listings</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="/banks/add">Add new Accounts</a>
+                <li class="nav-item"><a class="nav-link" href="/customers/add">Add Customers</a>
                 </li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link dropdown-indicator" href="#e-commerce" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="e-commerce">
-              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fa fa-user"></span></span><span class="nav-link-text">Manage Customers</span>
+            <li class="nav-item"><a class="nav-link dropdown-indicator" href="#forms" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="forms">
+              <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-shipping-fast"></span></span><span class="nav-link-text"> Manage Suppliers</span>
               </div>
             </a>
-            <ul class="nav collapse" id="e-commerce" data-parent="#navbarVerticalCollapse">
-              <li class="nav-item"><a class="nav-link" href="/customers">Customer Listings</a>
+            <ul class="nav collapse" id="forms" data-parent="#navbarVerticalCollapse">
+              <li class="nav-item"><a class="nav-link" href="/suppliers"> Supplier Listings</a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="/customers/add">Add Customers</a>
+              <li class="nav-item"><a class="nav-link" href="/suppliers/add">Add suppliers</a>
               </li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link dropdown-indicator" href="#forms" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="forms">
-            <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-shipping-fast"></span></span><span class="nav-link-text"> Manage Suppliers</span>
-            </div>
-          </a>
-          <ul class="nav collapse" id="forms" data-parent="#navbarVerticalCollapse">
-            <li class="nav-item"><a class="nav-link" href="/suppliers"> Supplier Listings</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="/suppliers/add">Add suppliers</a>
-            </li>
-          </ul>
-        </li>
               </ul>
             </div>
           </div>
+          
         </nav>
         <div class="content">
           <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand">
@@ -192,19 +193,26 @@
               <div class="card overflow-hidden" style="min-width: 12rem">
                 <div class="bg-holder bg-card" style="background-image:url(/img/illustrations/corner-1.png);">
                 </div>
+                <!--/.bg-holder-->
+
+                
               </div>
             </div>
             <div class="col-sm-6 col-md-4">
               <div class="card overflow-hidden" style="min-width: 12rem">
                 <div class="bg-holder bg-card" style="background-image:url(/img/illustrations/corner-2.png);">
                 </div>
-              </div>
+                <!--/.bg-holder-->
+
+                
             </div>
             <div class="col-md-4">
               <div class="card mb-3 overflow-hidden" style="min-width: 12rem">
                 <div class="bg-holder bg-card" style="background-image:url(/img/illustrations/corner-3.png);">
                 </div>
                 <!--/.bg-holder-->
+
+                
               </div>
             </div>
           </div>
@@ -212,7 +220,7 @@
             <div class="card-header">
               <div class="row flex-between-center">
                 <div class="col-6 col-sm-auto d-flex align-items-center pr-0">
-                  <h5 class="fs-0 mb-0 text-nowrap py-2 py-xl-0">Suppliers Listings</h5>
+                  <h5 class="fs-0 mb-0 text-nowrap py-2 py-xl-0">NB: Click the Armotisation schedule to proceed</h5>
                 </div>
                 <div class="col-6 col-sm-auto ml-auto text-right pl-0">
                   <div class="d-none" id="table-purchases-actions">
@@ -227,7 +235,7 @@
                     </div>
                   </div>
                   <div id="table-purchases-replace-element">
-                    <button class="btn btn-falcon-default btn-sm" type="button"><span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span><span class="d-none d-sm-inline-block ml-1"><a href="/suppliers/add"> New Loan</a></span></button>
+                    <button class="btn btn-falcon-default btn-sm" type="button"><span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span><span class="d-none d-sm-inline-block ml-1"><a href="/loans/{{$loans->id}}/repayments/create">Create Armotisation Schedule</a></span></button>
                     {{-- <button class="btn btn-falcon-default btn-sm mx-2" type="button"><span class="fas fa-filter" data-fa-transform="shrink-3 down-2"></span><span class="d-none d-sm-inline-block ml-1">Filter</span></button> --}}
                     {{-- <button class="btn btn-falcon-default btn-sm" type="button"><span class="fas fa-external-link-alt" data-fa-transform="shrink-3 down-2"></span><span class="d-none d-sm-inline-block ml-1">Export</span></button> --}}
                   </div>
@@ -244,14 +252,14 @@
                           <input class="form-check-input" id="checkbox-bulk-purchases-select" type="checkbox" data-bulk-select='{"body":"table-purchase-body","actions":"table-purchases-actions","replacedElement":"table-purchases-replace-element"}' />
                         </div>
                       </th>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="name"> Name</th>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">#Email</th>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Phone Number</th>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Account Number</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="name">Bank Name</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">Loan Amount</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Interest Rate</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap text-center" data-sort="payment">StartDate</th>
+                      {{-- <th class="sort pr-1 align-middle white-space-nowrap text-right" data-sort="amount">Interest Outstanding</th> --}}
                       <th class="no-sort pr-1 align-middle data-table-row-action"></th>
                     </tr>
                   </thead>
-                  @foreach($suppliers as $suppliers)
                   <tbody class="list" id="table-purchase-body">
                     <tr class="btn-reveal-trigger">
                       <td class="align-middle" style="width: 28px;">
@@ -259,20 +267,21 @@
                           <input class="form-check-input" type="checkbox" id="recent-purchase-0" data-bulk-select-row="data-bulk-select-row" />
                         </div>
                       </td>
-                      <th class="align-middle white-space-nowrap name"><a href="pages/customer-details.html">{{$suppliers->name}}</a></th>
-                      <td class="align-middle white-space-nowrap email">{{$suppliers->email}}</td>
-                      <td class="align-middle white-space-nowrap product">{{$suppliers->phoneNumber}}</td>
-                      <td class="align-middle white-space-nowrap product">{{$suppliers->accountNumber}}</td>
-
+                      {{-- $loans->repayments()->orderBy('id', 'DESC')->first()->principal --}}
+                      <th class="align-middle white-space-nowrap name"><a href="pages/customer-details.html">{{$loans->bankName}}</a></th>
+                      <td class="align-middle white-space-nowrap email">Ksh.{{number_format($loans->loanAmount)}}</td>
+                      <td class="align-middle white-space-nowrap product">{{$loans->interestRate}}%</td>
+                      <td class="align-middle text-center fs-0 white-space-nowrap payment"><span class="badge badge rounded-pill badge-soft-success">{{$loans->startDate}}<span class="ml-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
+                      </td>
+                      {{-- <td class="align-middle text-right amount">{{ $loans->repayments()->orderBy('id', 'ASC')->first()->start_date}}</td> --}}
                       <td class="align-middle white-space-nowrap">
                         <div class="dropdown font-sans-serif">
                           <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal float-right" type="button" id="dropdown0" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"><span class="fas fa-ellipsis-h fs--1"></span></button>
-                          <div class="dropdown-menu dropdown-menu-right border py-2" aria-labelledby="dropdown0"><a class="dropdown-item" href="/suppliers/{{$suppliers->id}}">View</a>
+                          <div class="dropdown-menu dropdown-menu-right border py-2" aria-labelledby="dropdown0"><a class="dropdown-item" href="/loans/{{$loans->id}}">View</a>
                           </div>
                         </div>
                       </td>
                     </tr>
-                    @endforeach
                   </tbody>
                 </table>
               </div>
@@ -281,12 +290,12 @@
               <div class="row align-items-center">
                 <div class="pagination d-none"></div>
                 <div class="col">
-                  <p class="mb-0 fs--1"><span class="d-none d-sm-inline-block mr-2" data-list-info="data-list-info"> </span><span class="d-none d-sm-inline-block mr-2">&mdash;  </span><a class="fw-semi-bold" href="#!" data-list-view="*">View all<span class="fas fa-angle-right ml-1" data-fa-transform="down-1"></span></a></p>
+                  {{-- <p class="mb-0 fs--1"><span class="d-none d-sm-inline-block mr-2" data-list-info="data-list-info"> </span><span class="d-none d-sm-inline-block mr-2">&mdash;  </span><a class="fw-semi-bold" href="#!" data-list-view="*">View all<span class="fas fa-angle-right ml-1" data-fa-transform="down-1"></span></a></p> --}}
                 </div>
-                <div class="col-auto d-flex">
+                {{-- <div class="col-auto d-flex">
                   <button class="btn btn-sm btn-primary" type="button" data-list-pagination="prev"><span>Previous</span></button>
                   <button class="btn btn-sm btn-primary px-4 ml-2" type="button" data-list-pagination="next"><span>Next</span></button>
-                </div>
+                </div> --}}
               </div>
             </div>
           </div>

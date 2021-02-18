@@ -104,6 +104,8 @@
                   </li>
                   <li class="nav-item"><a class="nav-link" href="/banks/add">Add new Accounts</a>
                   </li>
+                  <li class="nav-item"><a class="nav-link" href="/transactions">Transactions Listings</a>
+                  </li>
                 </ul>
               </li>
               <li class="nav-item"><a class="nav-link dropdown-indicator" href="#e-commerce" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="e-commerce">
@@ -291,7 +293,7 @@
                       <td class="align-middle white-space-nowrap product">{{$loans->interestRate}}%</td>
                       <td class="align-middle text-center fs-0 white-space-nowrap payment"><span class="badge badge rounded-pill badge-soft-success">{{$loans->startDate}}<span class="ml-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
                       </td>
-                      <td class="align-middle text-right amount">Ksh.{{ $loans->repayments()->orderBy('id', 'ASC')->first()->interest}}</td>
+                      <td class="align-middle text-right amount">{{ $loans->repayments()->orderBy('id', 'ASC')->first()->start_date}}</td>
                       <td class="align-middle white-space-nowrap">
                         <div class="dropdown font-sans-serif">
                           <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal float-right" type="button" id="dropdown0" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"><span class="fas fa-ellipsis-h fs--1"></span></button>

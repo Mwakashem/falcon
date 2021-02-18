@@ -195,7 +195,7 @@
             <div class="card-body p-3">
                 <div class="col">
                   <label class="form-label" for="bankName">Installment Number</label>
-                  <input class="form-control" value="{{$repayments->id}}" name="installmentNumber" id="bankName" type="text" placeholder="No.of Installments" required />
+                  <input class="form-control" value="{{$repayments->repaymentNumber}}" name="installmentNumber" id="bankName" type="text" placeholder="No.of Installments" required />
                 </div>
               <div class="row">
                 <div class="col">

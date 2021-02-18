@@ -23,6 +23,13 @@ class LoansController extends Controller
 
         return view('falcon', compact('loans'));
     }
+    public function recent()
+    {
+        //
+        $loans = Loans::latest()->get()->first();
+
+        return view('recent', compact('loans'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -64,7 +71,7 @@ class LoansController extends Controller
 
         Loans::create($data);
 
-        return redirect ('/');
+        return redirect ('/loans/recent');
     }
 
     /**

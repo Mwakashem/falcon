@@ -212,7 +212,7 @@
             <div class="card-header">
               <div class="row flex-between-center">
                 <div class="col-6 col-sm-auto d-flex align-items-center pr-0">
-                  <h5 class="fs-0 mb-0 text-nowrap py-2 py-xl-0">Suppliers Listings</h5>
+                  <h5 class="fs-0 mb-0 text-nowrap py-2 py-xl-0">Transactions Listings</h5>
                 </div>
                 <div class="col-6 col-sm-auto ml-auto text-right pl-0">
                   <div class="d-none" id="table-purchases-actions">
@@ -227,7 +227,7 @@
                     </div>
                   </div>
                   <div id="table-purchases-replace-element">
-                    <button class="btn btn-falcon-default btn-sm" type="button"><span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span><span class="d-none d-sm-inline-block ml-1"><a href="/suppliers/add"> New Loan</a></span></button>
+                    {{-- <button class="btn btn-falcon-default btn-sm" type="button"><span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span><span class="d-none d-sm-inline-block ml-1"><a href="/cust/add"> New Customer</a></span></button> --}}
                     {{-- <button class="btn btn-falcon-default btn-sm mx-2" type="button"><span class="fas fa-filter" data-fa-transform="shrink-3 down-2"></span><span class="d-none d-sm-inline-block ml-1">Filter</span></button> --}}
                     {{-- <button class="btn btn-falcon-default btn-sm" type="button"><span class="fas fa-external-link-alt" data-fa-transform="shrink-3 down-2"></span><span class="d-none d-sm-inline-block ml-1">Export</span></button> --}}
                   </div>
@@ -244,14 +244,14 @@
                           <input class="form-check-input" id="checkbox-bulk-purchases-select" type="checkbox" data-bulk-select='{"body":"table-purchase-body","actions":"table-purchases-actions","replacedElement":"table-purchases-replace-element"}' />
                         </div>
                       </th>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="name"> Name</th>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">#Email</th>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Phone Number</th>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Account Number</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="name"> Payment Amount</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">Principal</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Interest Amount</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Cheque Number</th>
                       <th class="no-sort pr-1 align-middle data-table-row-action"></th>
                     </tr>
                   </thead>
-                  @foreach($suppliers as $suppliers)
+                  @foreach($transactions as $transactions)
                   <tbody class="list" id="table-purchase-body">
                     <tr class="btn-reveal-trigger">
                       <td class="align-middle" style="width: 28px;">
@@ -259,15 +259,15 @@
                           <input class="form-check-input" type="checkbox" id="recent-purchase-0" data-bulk-select-row="data-bulk-select-row" />
                         </div>
                       </td>
-                      <th class="align-middle white-space-nowrap name"><a href="pages/customer-details.html">{{$suppliers->name}}</a></th>
-                      <td class="align-middle white-space-nowrap email">{{$suppliers->email}}</td>
-                      <td class="align-middle white-space-nowrap product">{{$suppliers->phoneNumber}}</td>
-                      <td class="align-middle white-space-nowrap product">{{$suppliers->accountNumber}}</td>
+                      <th class="align-middle white-space-nowrap name"><a href="pages/customer-details.html">Ksh.{{number_format($transactions->paymentAmount)}}</a></th>
+                      <td class="align-middle white-space-nowrap email">Ksh.{{number_format($transactions->principal)}}</td>
+                      <td class="align-middle white-space-nowrap product">Ksh.{{number_format($transactions->interest)}}</td>
+                      <td class="align-middle white-space-nowrap product">{{$transactions->chequeNumber}}</td>
 
                       <td class="align-middle white-space-nowrap">
                         <div class="dropdown font-sans-serif">
                           <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal float-right" type="button" id="dropdown0" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"><span class="fas fa-ellipsis-h fs--1"></span></button>
-                          <div class="dropdown-menu dropdown-menu-right border py-2" aria-labelledby="dropdown0"><a class="dropdown-item" href="/suppliers/{{$suppliers->id}}">View</a>
+                          {{-- <div class="dropdown-menu dropdown-menu-right border py-2" aria-labelledby="dropdown0"><a class="dropdown-item" href="/transactions/{{$transactions->id}}">View</a> --}}
                           </div>
                         </div>
                       </td>

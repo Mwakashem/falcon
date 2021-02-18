@@ -69,7 +69,7 @@ class RepaymentsController extends Controller
     }
 
         // Repayments::create($data);
-        return redirect ('/');
+        return redirect ('/loans/'.$request->loan_id);
     }
 
     /**
