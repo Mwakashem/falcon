@@ -40,9 +40,16 @@ class BankAccountController extends Controller
     {
         //
         $data = request()->validate([
-            'bankName'=>'required',
+            'accountName'=>'required',
             'accountNumber'=>'required',
+            'currency'=>'required',
             'accountType'=>'required',
+            'openingBalance'=>'required',
+            'bankName'=>'required',
+            'branchCode'=>'required',
+            'address'=>'required',
+            'phone'=>'required',
+            'email'=>'required',
         ]);
 
         BankAccount::create($data);     

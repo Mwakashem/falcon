@@ -52,6 +52,7 @@ class PaymentTransactionsController extends Controller
             'principal'=>'required',
             'interest'=>'required',
             'chequeNumber'=>'required',
+            'bankName'=>'required',
             'date_deposited'=>'required',
         ]);
         PaymentTransactions::create($data);

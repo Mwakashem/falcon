@@ -248,6 +248,7 @@
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">Principal</th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Interest Amount</th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Cheque Number</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Bank Name</th>
                       <th class="no-sort pr-1 align-middle data-table-row-action"></th>
                     </tr>
                   </thead>
@@ -263,6 +264,7 @@
                       <td class="align-middle white-space-nowrap email">Ksh.{{number_format($transactions->principal)}}</td>
                       <td class="align-middle white-space-nowrap product">Ksh.{{number_format($transactions->interest)}}</td>
                       <td class="align-middle white-space-nowrap product">{{$transactions->chequeNumber}}</td>
+                      <td class="align-middle white-space-nowrap product">{{$transactions->bankName}}</td>
 
                       <td class="align-middle white-space-nowrap">
                         <div class="dropdown font-sans-serif">

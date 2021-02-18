@@ -245,8 +245,11 @@
                         </div>
                       </th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="name">Bank Name</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">#Account Name</th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">#AccountNumber</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">#Balance</th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Account Type</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Branch Code</th>
                       <th class="no-sort pr-1 align-middle data-table-row-action"></th>
                     </tr>
                   </thead>
@@ -258,13 +261,16 @@
                           <input class="form-check-input" type="checkbox" id="recent-purchase-0" data-bulk-select-row="data-bulk-select-row" />
                         </div>
                       </td>
-                      <th class="align-middle white-space-nowrap name"><a href="pages/customer-details.html">{{$banks->bankName}}</a></th>
+                      <th class="align-middle white-space-nowrap name">{{$banks->bankName}}</th>
+                      <th class="align-middle white-space-nowrap name">{{$banks->accountName}}</th>
                       <td class="align-middle white-space-nowrap email">{{$banks->accountNumber}}</td>
+                      <td class="align-middle white-space-nowrap email">{{$banks->currency}}.{{number_format($banks->openingBalance)}}</td>
                       <td class="align-middle white-space-nowrap product">{{$banks->accountType}}</td>
+                      <td class="align-middle white-space-nowrap product">{{$banks->branchCode}}</td>
                       <td class="align-middle white-space-nowrap">
                         <div class="dropdown font-sans-serif">
                           <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal float-right" type="button" id="dropdown0" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"><span class="fas fa-ellipsis-h fs--1"></span></button>
-                          <div class="dropdown-menu dropdown-menu-right border py-2" aria-labelledby="dropdown0"><a class="dropdown-item" href="/banks/{{$banks->id}}">View</a>
+                          <div class="dropdown-menu dropdown-menu-right border py-2" aria-labelledby="dropdown0"><a class="dropdown-item" href="#">View</a>
                           </div>
                         </div>
                       </td>

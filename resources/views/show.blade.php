@@ -203,7 +203,7 @@
                     </div>
                   </div>
                   <div id="table-customers-replace-element">
-                    <button class="btn btn-falcon-default btn-sm" type="button"><span class="d-none d-sm-inline-block ml-1"><a href="/loans/{$loan->id}/edit">Pay Installment</a></span></button>
+                    {{-- <button class="btn btn-falcon-default btn-sm" type="button"><span class="d-none d-sm-inline-block ml-1"><a href="/loans/{$loan->id}/edit">Pay Installment</a></span></button> --}}
                     {{-- <button class="btn btn-falcon-default btn-sm mx-2" type="button"><svg class="svg-inline--fa fa-filter fa-w-16" data-fa-transform="shrink-3 down-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="filter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style="transform-origin: 0.5em 0.625em;"><g transform="translate(256 256)"><g transform="translate(0, 64)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z" transform="translate(-256 -256)"></path></g></g></svg><!-- <span class="fas fa-filter" data-fa-transform="shrink-3 down-2"></span> --><span class="d-none d-sm-inline-block ml-1">Filter</span></button> --}}
                     {{-- <button class="btn btn-falcon-default btn-sm" type="button"><svg class="svg-inline--fa fa-external-link-alt fa-w-16" data-fa-transform="shrink-3 down-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="external-link-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="" style="transform-origin: 0.5em 0.625em;"><g transform="translate(256 256)"><g transform="translate(0, 64)  scale(0.8125, 0.8125)  rotate(0 0 0)"><path fill="currentColor" d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z" transform="translate(-256 -256)"></path></g></g></svg><!-- < class="fas fa-external-link-alt" data-fa-transform="shrink-3 down-2"></span> --><span class="d-none d-sm-inline-block ml-1">Export</span></button> --}}
                   </div>
@@ -239,41 +239,41 @@
                         <label class="sr-only" for="inlineFormInputName">LoanId</label>
                         <input class="form-control" value="@php
                         echo ($loans_id)
-                    @endphp" name="loans_id[@php echo ($i)@endphp]" type="text" placeholder="" />
+                    @endphp" name="loans_id[@php echo ($i)@endphp]" type="text" placeholder="" readonly/>
                       </div>
                       <div class="col-2">
                         <label class="sr-only" for="inlineFormInputName">Repayment Number</label>
                         <input class="form-control" value="@php
                         echo ($i+1)
-                    @endphp" name="repaymentNumber[@php echo ($i)@endphp]" type="text" placeholder="" />
+                    @endphp" name="repaymentNumber[@php echo ($i)@endphp]" type="text" placeholder="" readonly/>
                       </div>
               
               <div class="col-2">
                 <label class="sr-only" for="inlineFormInputName">Date</label>
                 <input class="form-control" value="@php
                 echo ($start_date)
-            @endphp" name="start_date[@php echo ($i)@endphp]" type="text" placeholder="" />
+            @endphp" name="start_date[@php echo ($i)@endphp]" type="text" placeholder="" readonly/>
               </div>
               
               <div class="col-2">
                 <label class="sr-only" for="inlineFormInputName">Beginning Balance</label>
                 <input class="form-control" value="@php
                 echo round($loanAmount, -2)
-            @endphp" name="beginningBalance[@php echo ($i)@endphp]" type="text" placeholder="" />
+            @endphp" name="beginningBalance[@php echo ($i)@endphp]" type="text" placeholder=""readonly />
               </div>
               <?php $interest = $loanAmount * $monthlyRate;?>
               <div class="col-1">
                 <label class="sr-only" for="inlineFormInputName">Interest</label>
                 <input class="form-control" value="@php
                 echo round($interest, -2)
-            @endphp" name="interest[@php echo ($i)@endphp]" type="text" placeholder="" />
+            @endphp" name="interest[@php echo ($i)@endphp]" type="text" placeholder="" readonly />
               </div>
               <?php $monthlyPrincipal = $payment - $interest;?>
               <div class="col-1">
                 <label class="sr-only" for="inlineFormInputName">Principal</label>
                 <input class="form-control" value="@php
                 echo round($monthlyPrincipal, -2)
-            @endphp" name="principal[@php echo ($i)@endphp]" type="text" placeholder="" />
+            @endphp" name="principal[@php echo ($i)@endphp]" type="text" placeholder="" readonly/>
               </div>
 
               @php
@@ -283,7 +283,7 @@
                 <label class="sr-only" for="inlineFormInputName">Scheduled Payment</label>
                 <input class="form-control" value="@php
                 echo round($totalpayment, -2)
-            @endphp" name="scheduledPayment[@php echo ($i)@endphp]" type="text" placeholder="" />
+            @endphp" name="scheduledPayment[@php echo ($i)@endphp]" type="text" placeholder="" readonly/>
               </div>
               @php
                         $ending_balance = $loanAmount - $monthlyPrincipal; 
@@ -292,7 +292,7 @@
                 <label class="sr-only" for="inlineFormInputName">Ending Balance</label>
                 <input class="form-control" value="@php
                 echo round($ending_balance, -2)
-            @endphp" name="endingBalance[@php echo ($i)@endphp]" type="text" placeholder="" />
+            @endphp" name="endingBalance[@php echo ($i)@endphp]" type="text" placeholder="" readonly/>
               </div>
               @php
                        $loanAmount = $loanAmount - $monthlyPrincipal;   

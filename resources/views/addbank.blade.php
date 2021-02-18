@@ -189,30 +189,77 @@
               <p class="fs--1 mb-0"><a href="#!"><span class="fas fa-exchange-alt mr-2" data-fa-transform="rotate-90"></span>A payout for <strong>$921.42 </strong>was deposited 13 days ago</a>. Your next deposit is expected on <strong>Tuesday, March 13.</strong></p>
             </div>
           </div>
-          <div class="card bg-light mb-3">
-            <form action="/banks" method="post">
+          <form action="/banks" method="post">
+            <div class="card bg-light mb-3">
+            
               @csrf
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col">
-                  <label class="form-label" for="bankName">Bank Name</label>
-                  <input class="form-control" name="bankName" id="bankName" type="text" placeholder="Enter Bank Name" required />
+              <div class="card-body p-3">
+                <div class="row">
+                  <div class="col">
+                    <label class="form-label" for="bankName">Account Name</label>
+                    <input class="form-control" name="accountName" id="accountName" type="text" placeholder="Enter Bank Name" required />
+                  </div>
+                  <div class="col">
+                    <label class="form-label" for="amount">#Account Number</label>
+                    <input class="form-control" name="accountNumber" id="amount" type="text" placeholder="Enter Account Number" required />
+                  </div>
+                  <div class="col">
+                    <label class="form-label" for="amount">Currency</label>
+                    <select class="form-select" name="currency" aria-label="Default select example">
+                      <option selected="">Choose.....</option>
+                      <option value="Ksh">Ksh</option>
+                      <option value="Usd">Usd</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="col">
-                  <label class="form-label" for="amount">Account Number</label>
-                  <input class="form-control" name="accountNumber" id="amount" type="text" placeholder="Enter Account Number" required />
-                </div>
-              </div>
-                <div class="col">
+                <div class="row">
+                <div class="col-6">
                   <label class="form-label" for="bankName">Account Type</label>
-                  <input class="form-control" name="accountType" id="bankName" type="text" placeholder="Interest rate" required />
+                  <input class="form-control" name="accountType" id="bankName" type="text" placeholder="Account Type" required />
                 </div>
-                <input type="submit" class=" mt-4 ml-20 btn btn-primary" value="submit"> 
-                </div>            
+                <div class="col-6">
+                  <label class="form-label" for="bankName">Opening Balance</label>
+                  <input class="form-control" name="openingBalance" id="bankName" type="text" placeholder="Opening Balance" required />
+                </div>
+                </div>
+                  </div>                  
 
             </div>
+            <div class="card bg-light mb-3">
+            
+              <div class="card-body p-3">
+                <div class="row">
+                  <div class="col">
+                    <label class="form-label" for="bankName">Bank Name</label>
+                    <input class="form-control" name="bankName" id="bankName" type="text" placeholder="Enter Bank Name" required />
+                  </div>
+                  <div class="col">
+                    <label class="form-label" for="bankName">Branch Code</label>
+                    <input class="form-control" name="branchCode" id="accountName" type="text" placeholder="Enter Bank Name" required />
+                  </div>
+                  <div class="col">
+                    <label class="form-label" for="amount">Address</label>
+                    <input class="form-control" name="address" id="amount" type="text" placeholder="Enter Account Number" required />
+                  </div>
+                </div>
+                <div class="row">
+                <div class="col-6">
+                  <label class="form-label" for="bankName">Phone:</label>
+                  <input class="form-control" name="phone" id="bankName" type="text" placeholder="Phone" required />
+                </div>
+                <div class="col-6">
+                  <label class="form-label" for="bankName">Email</label>
+                  <input class="form-control" name="email" id="bankName" type="email" placeholder="Email" required />
+                </div>
+                </div>
+                  </div>                 
+
+            </div>
+            <input type="submit" class=" mt-4 ml-20 btn btn-primary" value="submit"> 
             </form>
+            
           </div>
+          
 
 
           <footer>

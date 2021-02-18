@@ -247,7 +247,10 @@
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="name"> Name</th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">#Email</th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Phone Number</th>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Account Number</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Account Number</th>                      
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Bank Name</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Tax Id</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Branch Code</th>    
                       <th class="no-sort pr-1 align-middle data-table-row-action"></th>
                     </tr>
                   </thead>
@@ -263,6 +266,9 @@
                       <td class="align-middle white-space-nowrap email">{{$customers->email}}</td>
                       <td class="align-middle white-space-nowrap product">{{$customers->phoneNumber}}</td>
                       <td class="align-middle white-space-nowrap product">{{$customers->accountNumber}}</td>
+                      <td class="align-middle white-space-nowrap product">{{$customers->bankName}}</td>
+                      <td class="align-middle white-space-nowrap product">{{$customers->taxId}}</td>
+                      <td class="align-middle white-space-nowrap product">{{$customers->branchCode}}</td>
 
                       <td class="align-middle white-space-nowrap">
                         <div class="dropdown font-sans-serif">

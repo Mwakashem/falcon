@@ -19,7 +19,8 @@ class CreatePaymentTransactionsTable extends Migration
             $table->string('paymentAmount');
             $table->string('principal');
             $table->string('interest');            
-            $table->string('chequeNumber');            
+            $table->string('chequeNumber');                          
+            $table->string('bankName');            
             $table->string('date_deposited');
             $table->timestamps();
         });

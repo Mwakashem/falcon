@@ -193,32 +193,34 @@
             <form action="/transactions/create" method="post">
               @csrf
             <div class="card-body p-3">
+                
+              <div class="row">
                 <div class="col">
                   <label class="form-label" for="bankName">Installment Number</label>
-                  <input class="form-control" value="{{$repayments->repaymentNumber}}" name="installmentNumber" id="bankName" type="text" placeholder="No.of Installments" required />
+                  <input class="form-control" value="{{$repayments->repaymentNumber}}" name="installmentNumber" id="bankName" type="text" placeholder="No.of Installments" required readonly/>
                 </div>
-              <div class="row">
                 <div class="col">
                   <label class="form-label" for="amount">Payment Amount</label>
-                  <input class="form-control" value="{{$repayments->scheduledPayment}}" name="paymentAmount" id="amount" type="text" placeholder="Enter Loan Amount" required />
+                  <input class="form-control" value="{{$repayments->scheduledPayment}}" name="paymentAmount" id="amount" type="text" placeholder="Enter Loan Amount" required readonly />
+                </div>
+                <div class="col">
+                  <label class="form-label" for="amount">Principal Due</label>
+                  <input class="form-control" value="{{$repayments->principal}}" name="principal" id="amount" type="text" placeholder="Enter Loan Amount" required  readonly/>
+                </div><div class="col">
+                  <label class="form-label" for="amount">Interest Due</label>
+                  <input class="form-control" value="{{$repayments->interest}}" name="interest" id="amount" type="text" placeholder="Enter Loan Amount" required  readonly/>
                 </div>
               </div>
               <div class="row">
-                <div class="col">
-                  <label class="form-label" for="amount">Principal Amount</label>
-                  <input class="form-control" value="{{$repayments->principal}}" name="principal" id="amount" type="text" placeholder="Enter Loan Amount" required />
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <label class="form-label" for="amount">Principal Amount</label>
-                  <input class="form-control" value="{{$repayments->interest}}" name="interest" id="amount" type="text" placeholder="Enter Loan Amount" required />
-                </div>
-              </div>
                 <div class="col">
                   <label class="form-label" for="bankName">Cheque Number</label>
                   <input class="form-control" name="chequeNumber" id="bankName" type="text" placeholder="Cheque No." required />
                 </div>
+                <div class="col">
+                  <label class="form-label" for="bankName">Bank Name</label>
+                  <input class="form-control" name="bankName" id="bankName" type="text" placeholder="Bank Name" required />
+                </div>
+              </div>
                 <div class="d-flex justify-content-between">
                 <div class="col-4">
                   <label class="form-label" for="datepicker">Date Cheque Deposited</label>
