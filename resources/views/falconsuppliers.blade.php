@@ -247,7 +247,10 @@
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="name"> Name</th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="email">#Email</th>
                       <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Phone Number</th>
-                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Account Number</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Account Number</th>                      
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Bank Name</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Tax Id</th>
+                      <th class="sort pr-1 align-middle white-space-nowrap" data-sort="product">Branch Code</th>  
                       <th class="no-sort pr-1 align-middle data-table-row-action"></th>
                     </tr>
                   </thead>
@@ -259,10 +262,13 @@
                           <input class="form-check-input" type="checkbox" id="recent-purchase-0" data-bulk-select-row="data-bulk-select-row" />
                         </div>
                       </td>
-                      <th class="align-middle white-space-nowrap name"><a href="pages/customer-details.html">{{$suppliers->name}}</a></th>
+                      <th class="align-middle white-space-nowrap name"><a href="">{{$suppliers->name}}</a></th>
                       <td class="align-middle white-space-nowrap email">{{$suppliers->email}}</td>
                       <td class="align-middle white-space-nowrap product">{{$suppliers->phoneNumber}}</td>
                       <td class="align-middle white-space-nowrap product">{{$suppliers->accountNumber}}</td>
+                      <td class="align-middle white-space-nowrap product">{{$suppliers->bankName}}</td>
+                      <td class="align-middle white-space-nowrap product">{{$suppliers->taxId}}</td>
+                      <td class="align-middle white-space-nowrap product">{{$suppliers->branchCode}}</td>
 
                       <td class="align-middle white-space-nowrap">
                         <div class="dropdown font-sans-serif">

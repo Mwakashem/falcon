@@ -44,7 +44,14 @@ class SuppliersController extends Controller
             'name'=>'required',
             'phoneNumber'=>'required',
             'email'=>'required',
+            'taxId'=>'required',
+            'postalAddress'=>'required',
+            'physicalAddress'=>'required',
             'accountNumber'=>'required',
+            'branchName'=>'required',
+            'branchCode'=>'required',
+            'bankName'=>'required',
+            'currency'=>'required',
         ]);
 
         Suppliers::create($data);     
