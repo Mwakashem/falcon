@@ -249,7 +249,7 @@
                       </div>
               
               <div class="col-2">
-                <label class="sr-only" for="inlineFormInputName">Date</label>
+                <label class="sr-only" for="inlineFormInputName"> Due Date</label>
                 <input class="form-control" value="@php
                 echo ($start_date)
             @endphp" name="start_date[@php echo ($i)@endphp]" type="text" placeholder="" readonly/>
