@@ -48,6 +48,7 @@ class RepaymentsController extends Controller
             'principal.*'=>'required',
             'scheduledPayment.*'=>'required',
             'endingBalance.*'=>'required',
+            'status.*'=>'required',
         ]);
         // dd($data);
     $count = count($request->loans_id);
@@ -63,6 +64,7 @@ class RepaymentsController extends Controller
       $repayments->principal = $request->principal[$i];
       $repayments->scheduledPayment = $request->scheduledPayment[$i];
       $repayments->endingBalance = $request->endingBalance[$i];
+      $repayments->status = $request->status[$i];
 	  $repayments->save();
 
 

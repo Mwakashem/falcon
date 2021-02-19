@@ -255,44 +255,51 @@
             @endphp" name="start_date[@php echo ($i)@endphp]" type="text" placeholder="" readonly/>
               </div>
               
-              <div class="col-2">
-                <label class="sr-only" for="inlineFormInputName">Beginning Balance</label>
+              {{-- <div class="col-2"> --}}
+                {{-- <label class="sr-only" for="inlineFormInputName">Beginning Balance</label> --}}
                 <input class="form-control" value="@php
                 echo round($loanAmount, -2)
-            @endphp" name="beginningBalance[@php echo ($i)@endphp]" type="text" placeholder=""readonly />
-              </div>
+            @endphp" name="beginningBalance[@php echo ($i)@endphp]" type="hidden" placeholder=""readonly />
+              {{-- </div> --}}
               <?php $interest = $loanAmount * $monthlyRate;?>
-              <div class="col-1">
-                <label class="sr-only" for="inlineFormInputName">Interest</label>
+              {{-- <div class="col-1"> --}}
+                {{-- <label class="sr-only" for="inlineFormInputName">Interest</label> --}}
                 <input class="form-control" value="@php
                 echo round($interest, -2)
-            @endphp" name="interest[@php echo ($i)@endphp]" type="text" placeholder="" readonly />
-              </div>
+            @endphp" name="interest[@php echo ($i)@endphp]" type="hidden" placeholder="" readonly />
+              {{-- </div> --}}
               <?php $monthlyPrincipal = $payment - $interest;?>
-              <div class="col-1">
-                <label class="sr-only" for="inlineFormInputName">Principal</label>
+              {{-- <div class="col-1"> --}}
+                {{-- <label class="sr-only" for="inlineFormInputName">Principal</label> --}}
                 <input class="form-control" value="@php
                 echo round($monthlyPrincipal, -2)
-            @endphp" name="principal[@php echo ($i)@endphp]" type="text" placeholder="" readonly/>
-              </div>
+            @endphp" name="principal[@php echo ($i)@endphp]" type="hidden" placeholder="" readonly/>
+              {{-- </div> --}}
 
               @php
               $totalpayment = $monthlyPrincipal + $interest;
               @endphp
-              <div class="col-2">
-                <label class="sr-only" for="inlineFormInputName">Scheduled Payment</label>
+              {{-- <div class="col-2"> --}}
+                {{-- <label class="sr-only" for="inlineFormInputName">Scheduled Payment</label> --}}
                 <input class="form-control" value="@php
                 echo round($totalpayment, -2)
-            @endphp" name="scheduledPayment[@php echo ($i)@endphp]" type="text" placeholder="" readonly/>
-              </div>
+            @endphp" name="scheduledPayment[@php echo ($i)@endphp]" type="hidden" placeholder="" readonly/>
+              {{-- </div> --}}
               @php
                         $ending_balance = $loanAmount - $monthlyPrincipal; 
                       @endphp
-              <div class="col-1">
-                <label class="sr-only" for="inlineFormInputName">Ending Balance</label>
+              {{-- <div class="col-1"> --}}
+                {{-- <label class="sr-only" for="inlineFormInputName">Ending Balance</label> --}}
                 <input class="form-control" value="@php
                 echo round($ending_balance, -2)
-            @endphp" name="endingBalance[@php echo ($i)@endphp]" type="text" placeholder="" readonly/>
+            @endphp" name="endingBalance[@php echo ($i)@endphp]" type="hidden" placeholder="" readonly/>
+              {{-- </div> --}}
+              <div class="col-2">
+                <label class="sr-only" for="">Loan Status</label>
+                <select class="form-select" name="status[@php echo ($i)@endphp]" id="inlineFormSelectPref">
+                  <option value="Not Paid">Not Paid</option>
+                  <option value="Paid">Paid</option>
+                </select>
               </div>
               @php
                        $loanAmount = $loanAmount - $monthlyPrincipal;   
@@ -300,7 +307,9 @@
                        $start_date = strtotime($start_date);
                        $start_date = date("Y-m-d", strtotime("+1 month", $start_date))."\n";
                     @endphp
+                    
                     @endfor
+                    
 
                 <input type="submit" class="btn btn-primary">
               

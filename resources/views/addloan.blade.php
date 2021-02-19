@@ -213,7 +213,7 @@
                   <input class="form-control" name="loanAmount" id="amount" type="text" placeholder="Enter Loan Amount" required />
                 </div>
                 <div class="col-4">
-                  <label class="" for="form-label">Differed Interest Rate</label>
+                  <label class="" for="form-label">Differed Interest Rate Status</label>
                   <select class="form-select" name="differed" id="inlineFormSelectPref">
                     <option selected="">Choose...</option>
                     <option value="Not Active">Not Active</option>
