@@ -16,6 +16,9 @@ class RepaymentsController extends Controller
     public function index()
     {
         //
+        $repayments = Repayments::latest()->get();
+
+        return view('falconrepayments', compact('repayments'));
     }
 
     /**

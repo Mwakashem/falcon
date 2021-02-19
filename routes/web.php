@@ -31,6 +31,8 @@ Route::get('/loans/recent', [LoansController::class,'recent'])->middleware('auth
 
 Route::get('/loans/add', [LoansController::class,'create'])->middleware('auth');
 
+Route::get('/urgentrepayments', [RepaymentsController::class,'index'])->middleware('auth');
+
 Route::any('/loans/{id}/repayments/create', [RepaymentsController::class,'create'])->middleware('auth');
 Route::post('/loans/{id}/repayments', [RepaymentsController::class,'store'])->middleware('auth');
 Route::get('/repayments/{paymentid}', [RepaymentsController::class,'edit'])->middleware('auth');
