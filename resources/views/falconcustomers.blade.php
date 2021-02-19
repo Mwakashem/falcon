@@ -104,6 +104,10 @@
                 </li>
                 <li class="nav-item"><a class="nav-link" href="/banks/add">Add new Accounts</a>
                 </li>
+                
+                  
+                <li class="nav-item"><a class="nav-link" href="/transactions">Transactions Listings</a>
+                </li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link dropdown-indicator" href="#e-commerce" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="e-commerce">
